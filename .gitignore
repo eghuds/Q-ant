@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+token.json
+.env
+
+# Claude Code 로컬 설정 (저장소에 올리지 않음)
+.claude/
+CLAUDE.md
