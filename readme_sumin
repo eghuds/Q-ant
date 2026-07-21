@@ -1,0 +1,10 @@
+그 한 폴더
+  ├── UGRP.py                     
+  └── trading_params_mapping.py   
+  └── integrated_pipeline.py
+
+이렇게 놓고 $env:OPENAI_API_KEY="sk-여기에실제키"
+powershell에서 python integrated_pipeline.py로 실행하면
+
+됌
+
