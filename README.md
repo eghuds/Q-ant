@@ -1,4 +1,4 @@
-# backtesting-utils
+# backtesting-utilities
 
 백테스팅 SDK. 에이전트(ML/룰베이스)를 공통 규격으로 정의하고,
 CSV 데이터셋 위에서 백테스트를 실행해 성과 지표를 반환한다.
