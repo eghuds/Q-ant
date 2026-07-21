@@ -47,7 +47,7 @@ python examples/quickstart.py        # ML/이동평균/바이앤홀드 에이전
 | `backtesting_utils/runner.py` | `Runner` — 백테스트 루프, `BacktestResult` |
 | `backtesting_utils/metrics.py` | 수익률 / MDD / 샤프 / 승률 |
 | `scripts/make_ml_dataset.py` | OHLCV CSV → 피쳐+타깃 → train/test 분할 |
-| `examples/quickstart.py` | 회의록 4줄 예시가 실제로 도는 파일 |
+| `examples/quickstart.py` | 실제로 도는 파일 |
 | `tests/` | 기본 동작 검증 (`pytest tests/ -v`) |
 
 ## 데이터 규약
