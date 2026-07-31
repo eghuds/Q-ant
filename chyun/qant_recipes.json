@@ -1,0 +1,853 @@
+{
+ "meta": {
+  "version": "0.1.0",
+  "normalizer_version": "0.4.1",
+  "n_recipes": 32,
+  "status_counts": {
+   "exact": 23,
+   "approximate": 9
+  },
+  "verification": "합성 패널에서 독립 pandas 기준 구현과 정상상태 비교"
+ },
+ "recipes": [
+  {
+   "name": "SMA",
+   "expanded_dsl": "ts_mean(close, 20)",
+   "canonical_dsl": "ts_mean(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "단순이동평균",
+    "이동평균",
+    "simple moving average",
+    "이평선"
+   ],
+   "default_params": {
+    "n": 20
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_mean(close, {n})",
+   "notes": ""
+  },
+  {
+   "name": "EMA",
+   "expanded_dsl": "ts_ewm(close, 20)",
+   "canonical_dsl": "ts_ewm(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.008877282,
+   "steady_rel_diff": 7.22e-05,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "approximate",
+   "aliases": [
+    "지수이동평균",
+    "exponential moving average",
+    "지수평활"
+   ],
+   "default_params": {
+    "n": 20
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_ewm(close, {n})",
+   "notes": "실행기 ewm 은 adjust=True — 재귀 정의(SMA 시드)와 초기 구간이 다르고 지수적으로 수렴"
+  },
+  {
+   "name": "WMA",
+   "expanded_dsl": "ts_decay_linear(close, 20)",
+   "canonical_dsl": "ts_decay_linear(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "가중이동평균",
+    "weighted moving average",
+    "선형가중"
+   ],
+   "default_params": {
+    "n": 20
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_decay_linear(close, {n})",
+   "notes": ""
+  },
+  {
+   "name": "RSI",
+   "expanded_dsl": "100 * ts_sma_cn(max(ts_delta(close, 1), 0), 14, 1) / (ts_sma_cn(max(ts_delta(close, 1), 0), 14, 1) + ts_sma_cn(max(0 - ts_delta(close, 1), 0), 14, 1) + 1e-12)",
+   "canonical_dsl": "100 * ts_sma_cn(max(ts_delta(close, 1), 0), 14, 1) / (ts_sma_cn(max(ts_delta(close, 1), 0), 14, 1) + ts_sma_cn(max(0 - ts_delta(close, 1), 0), 14, 1) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.2691326025,
+   "steady_rel_diff": 0.0054244,
+   "steady_corr": 0.999999,
+   "n_compared": 6940,
+   "expansion_status": "approximate",
+   "aliases": [
+    "상대강도지수",
+    "relative strength index",
+    "과매수",
+    "과매도",
+    "오실레이터"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "100 * ts_sma_cn(max(ts_delta(close, 1), 0), {n}, 1) / (ts_sma_cn(max(ts_delta(close, 1), 0), {n}, 1) + ts_sma_cn(max(0 - ts_delta(close, 1), 0), {n}, 1) + 1e-12)",
+   "notes": "Wilder 평활 = ts_sma_cn(x, n, 1). 시드(SMA vs 첫값) 차이는 정상상태에서 소멸"
+  },
+  {
+   "name": "MACD",
+   "expanded_dsl": "ts_ewm(close, 12) - ts_ewm(close, 26)",
+   "canonical_dsl": "ts_ewm(close, 12) - ts_ewm(close, 26)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0216911744,
+   "steady_rel_diff": 0.00779513,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "approximate",
+   "aliases": [
+    "macd",
+    "이동평균수렴확산",
+    "moving average convergence divergence"
+   ],
+   "default_params": {
+    "fast": 12,
+    "slow": 26
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_ewm(close, {fast}) - ts_ewm(close, {slow})",
+   "notes": "adjust=True vs 재귀 시드 차이 — 정상상태 수렴"
+  },
+  {
+   "name": "MACD_SIGNAL",
+   "expanded_dsl": "ts_ewm(ts_ewm(close, 12) - ts_ewm(close, 26), 9)",
+   "canonical_dsl": "ts_ewm(ts_ewm(close, 12) - ts_ewm(close, 26), 9)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0295606122,
+   "steady_rel_diff": 0.01126503,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "approximate",
+   "aliases": [
+    "macd 시그널",
+    "시그널선",
+    "macd signal"
+   ],
+   "default_params": {
+    "fast": 12,
+    "slow": 26,
+    "sig": 9
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_ewm(ts_ewm(close, {fast}) - ts_ewm(close, {slow}), {sig})",
+   "notes": "adjust=True vs 재귀 시드 차이 — 정상상태 수렴"
+  },
+  {
+   "name": "PPO",
+   "expanded_dsl": "100 * (ts_ewm(close, 12) - ts_ewm(close, 26)) / ts_ewm(close, 26)",
+   "canonical_dsl": "100 * (ts_ewm(close, 12) - ts_ewm(close, 26)) / ts_ewm(close, 26)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0024003344,
+   "steady_rel_diff": 0.00111938,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "approximate",
+   "aliases": [
+    "ppo",
+    "percentage price oscillator",
+    "가격 오실레이터"
+   ],
+   "default_params": {
+    "fast": 12,
+    "slow": 26
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "100 * (ts_ewm(close, {fast}) - ts_ewm(close, {slow})) / ts_ewm(close, {slow})",
+   "notes": "adjust=True vs 재귀 시드 차이 — 정상상태 수렴"
+  },
+  {
+   "name": "ROC",
+   "expanded_dsl": "100 * ts_returns(close, 10)",
+   "canonical_dsl": "100 * ts_returns(close, 10)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 7500,
+   "expansion_status": "exact",
+   "aliases": [
+    "변화율",
+    "rate of change",
+    "등락률",
+    "수익률"
+   ],
+   "default_params": {
+    "n": 10
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "100 * ts_returns(close, {n})",
+   "notes": "ts_returns 재작성(0.4.0)의 대표 수요처"
+  },
+  {
+   "name": "MOM",
+   "expanded_dsl": "ts_delta(close, 10)",
+   "canonical_dsl": "ts_delta(close, 10)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 7500,
+   "expansion_status": "exact",
+   "aliases": [
+    "모멘텀",
+    "momentum",
+    "가격차"
+   ],
+   "default_params": {
+    "n": 10
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_delta(close, {n})",
+   "notes": ""
+  },
+  {
+   "name": "BB_UPPER",
+   "expanded_dsl": "ts_mean(close, 20) + 2 * ts_std(close, 20)",
+   "canonical_dsl": "ts_mean(close, 20) + 2 * ts_std(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "볼린저밴드 상단",
+    "볼린저 상단",
+    "bollinger upper",
+    "상단밴드"
+   ],
+   "default_params": {
+    "n": 20,
+    "k": 2
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_mean(close, {n}) + {k} * ts_std(close, {n})",
+   "notes": "ts_std 는 표본표준편차(ddof=1). TA-Lib 은 모표준편차(ddof=0) — 상관은 1에 가까움"
+  },
+  {
+   "name": "BB_LOWER",
+   "expanded_dsl": "ts_mean(close, 20) - 2 * ts_std(close, 20)",
+   "canonical_dsl": "ts_mean(close, 20) - 2 * ts_std(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "볼린저밴드 하단",
+    "볼린저 하단",
+    "bollinger lower",
+    "하단밴드"
+   ],
+   "default_params": {
+    "n": 20,
+    "k": 2
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_mean(close, {n}) - {k} * ts_std(close, {n})",
+   "notes": "ddof 주석은 BB_UPPER 와 동일"
+  },
+  {
+   "name": "BB_PERCENT_B",
+   "expanded_dsl": "(close - (ts_mean(close, 20) - 2 * ts_std(close, 20))) / (2 * 2 * ts_std(close, 20) + 1e-12)",
+   "canonical_dsl": "(close - (ts_mean(close, 20) - 2 * ts_std(close, 20))) / (4 * ts_std(close, 20) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "볼린저밴드",
+    "bollinger bands",
+    "%b",
+    "밴드 위치"
+   ],
+   "default_params": {
+    "n": 20,
+    "k": 2
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "(close - (ts_mean(close, {n}) - {k} * ts_std(close, {n}))) / (2 * {k} * ts_std(close, {n}) + 1e-12)",
+   "notes": "밴드 내 위치 0~1. ddof 주석 동일"
+  },
+  {
+   "name": "TRANGE",
+   "expanded_dsl": "max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1))))",
+   "canonical_dsl": "max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1))))",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "true range",
+    "트루레인지",
+    "실질변동폭"
+   ],
+   "default_params": {},
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1))))",
+   "notes": ""
+  },
+  {
+   "name": "ATR",
+   "expanded_dsl": "ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), 14, 1)",
+   "canonical_dsl": "ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), 14, 1)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.1032783102,
+   "steady_rel_diff": 0.03002729,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "approximate",
+   "aliases": [
+    "평균실질변동폭",
+    "average true range",
+    "변동폭"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), {n}, 1)",
+   "notes": "Wilder 평활. 시드 차이는 정상상태에서 소멸"
+  },
+  {
+   "name": "NATR",
+   "expanded_dsl": "100 * ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), 14, 1) / close",
+   "canonical_dsl": "100 * ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), 14, 1) / close",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0194682446,
+   "steady_rel_diff": 0.00740173,
+   "steady_corr": 0.999999,
+   "n_compared": 6940,
+   "expansion_status": "approximate",
+   "aliases": [
+    "정규화 atr",
+    "normalized atr"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "100 * ts_sma_cn(max(high - low, max(abs(high - ts_delay(close, 1)), abs(low - ts_delay(close, 1)))), {n}, 1) / close",
+   "notes": "ATR 주석과 동일"
+  },
+  {
+   "name": "STOCH_K",
+   "expanded_dsl": "100 * (close - ts_min(low, 14)) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12)",
+   "canonical_dsl": "100 * (close - ts_min(low, 14)) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 7e-10,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "스토캐스틱",
+    "stochastic",
+    "%k",
+    "패스트 스토캐스틱"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "100 * (close - ts_min(low, {n})) / (ts_max(high, {n}) - ts_min(low, {n}) + 1e-12)",
+   "notes": ""
+  },
+  {
+   "name": "STOCH_D",
+   "expanded_dsl": "ts_mean(100 * (close - ts_min(low, 14)) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12), 3)",
+   "canonical_dsl": "ts_mean(100 * (close - ts_min(low, 14)) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12), 3)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 6e-10,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "스토캐스틱 시그널",
+    "%d",
+    "슬로우 스토캐스틱"
+   ],
+   "default_params": {
+    "n": 14,
+    "d": 3
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "ts_mean(100 * (close - ts_min(low, {n})) / (ts_max(high, {n}) - ts_min(low, {n}) + 1e-12), {d})",
+   "notes": ""
+  },
+  {
+   "name": "WILLR",
+   "expanded_dsl": "(0 - 100) * (ts_max(high, 14) - close) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12)",
+   "canonical_dsl": "-100 * (ts_max(high, 14) - close) / (ts_max(high, 14) - ts_min(low, 14) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 9e-10,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "윌리엄스",
+    "williams %r",
+    "윌리엄스 퍼센트"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "(0 - 100) * (ts_max(high, {n}) - close) / (ts_max(high, {n}) - ts_min(low, {n}) + 1e-12)",
+   "notes": ""
+  },
+  {
+   "name": "CCI",
+   "expanded_dsl": "(((high + low + close) / 3) - ts_mean(((high + low + close) / 3), 14)) / (0.015 * ts_mean(abs(((high + low + close) / 3) - ts_mean(((high + low + close) / 3), 14)), 14) + 1e-12)",
+   "canonical_dsl": "((high + low + close) / 3 - ts_mean((high + low + close) / 3, 14)) / (0.015 * ts_mean(abs((high + low + close) / 3 - ts_mean((high + low + close) / 3, 14)), 14) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 4.675e-07,
+   "steady_rel_diff": 1e-08,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "상품채널지수",
+    "commodity channel index"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close"
+   ],
+   "template": "(((high + low + close) / 3) - ts_mean(((high + low + close) / 3), {n})) / (0.015 * ts_mean(abs(((high + low + close) / 3) - ts_mean(((high + low + close) / 3), {n})), {n}) + 1e-12)",
+   "notes": "TA-Lib 평균편차는 창 고정 SMA 기준 — 본 전개는 롤링 SMA 편차의 롤링 평균 (근사)"
+  },
+  {
+   "name": "MFI",
+   "expanded_dsl": "100 * ts_sum(where(gt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), 14) / (ts_sum(where(gt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), 14) + ts_sum(where(lt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), 14) + 1e-12)",
+   "canonical_dsl": "100 * ts_sum(where((high + low + close) / 3 > ts_delay((high + low + close) / 3, 1), (high + low + close) / 3 * volume, 0), 14) / (ts_sum(where((high + low + close) / 3 > ts_delay((high + low + close) / 3, 1), (high + low + close) / 3 * volume, 0), 14) + ts_sum(where((high + low + close) / 3 < ts_delay((high + low + close) / 3, 1), (high + low + close) / 3 * volume, 0), 14) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "자금흐름지수",
+    "money flow index",
+    "자금흐름"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close",
+    "volume"
+   ],
+   "template": "100 * ts_sum(where(gt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), {n}) / (ts_sum(where(gt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), {n}) + ts_sum(where(lt(((high + low + close) / 3), ts_delay(((high + low + close) / 3), 1)), ((high + low + close) / 3) * volume, 0), {n}) + 1e-12)",
+   "notes": ""
+  },
+  {
+   "name": "OBV",
+   "expanded_dsl": "ts_cumsum(sign(ts_delta(close, 1)) * volume, 1)",
+   "canonical_dsl": "ts_cumsum(sign(ts_delta(close, 1)) * volume, 1)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "온밸런스볼륨",
+    "on balance volume",
+    "거래량균형"
+   ],
+   "default_params": {},
+   "inputs": [
+    "close",
+    "volume"
+   ],
+   "template": "ts_cumsum(sign(ts_delta(close, 1)) * volume, 1)",
+   "notes": "시작점 상수(첫날 거래량 시드)만 다름 — demean 비교"
+  },
+  {
+   "name": "AD",
+   "expanded_dsl": "ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1)",
+   "canonical_dsl": "ts_cumsum((close - low - (high - close)) / (high - low + 1e-12) * volume, 1)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0008366127,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "누적분산",
+    "accumulation distribution",
+    "차이킨 ad"
+   ],
+   "default_params": {},
+   "inputs": [
+    "high",
+    "low",
+    "close",
+    "volume"
+   ],
+   "template": "ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1)",
+   "notes": ""
+  },
+  {
+   "name": "ADOSC",
+   "expanded_dsl": "ts_ewm(ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1), 3) - ts_ewm(ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1), 10)",
+   "canonical_dsl": "ts_ewm(ts_cumsum((close - low - (high - close)) / (high - low + 1e-12) * volume, 1), 3) - ts_ewm(ts_cumsum((close - low - (high - close)) / (high - low + 1e-12) * volume, 1), 10)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 325.3369538616,
+   "steady_rel_diff": 0.00324611,
+   "steady_corr": 1.0,
+   "n_compared": 7500,
+   "expansion_status": "approximate",
+   "aliases": [
+    "차이킨 오실레이터",
+    "chaikin oscillator",
+    "adosc"
+   ],
+   "default_params": {
+    "fast": 3,
+    "slow": 10
+   },
+   "inputs": [
+    "high",
+    "low",
+    "close",
+    "volume"
+   ],
+   "template": "ts_ewm(ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1), {fast}) - ts_ewm(ts_cumsum(((close - low) - (high - close)) / (high - low + 1e-12) * volume, 1), {slow})",
+   "notes": "누적 신호의 EMA 차 — adjust 시드 차이는 정상상태 수렴"
+  },
+  {
+   "name": "AROON_UP",
+   "expanded_dsl": "100 * (25 - ts_argmax(high, 26)) / 25",
+   "canonical_dsl": "100 * (25 - ts_argmax(high, 26)) / 25",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "exact",
+   "aliases": [
+    "아룬 업",
+    "aroon up"
+   ],
+   "default_params": {
+    "n": 25,
+    "n1": 26
+   },
+   "inputs": [
+    "high"
+   ],
+   "template": "100 * ({n} - ts_argmax(high, {n1})) / {n}",
+   "notes": "ts_argmax 는 '최대였던 날이 며칠 전인가' 반환 — 창 n1 = n+1 (DSL window 는 상수만 허용)"
+  },
+  {
+   "name": "AROON_DOWN",
+   "expanded_dsl": "100 * (25 - ts_argmin(low, 26)) / 25",
+   "canonical_dsl": "100 * (25 - ts_argmin(low, 26)) / 25",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "exact",
+   "aliases": [
+    "아룬 다운",
+    "aroon down"
+   ],
+   "default_params": {
+    "n": 25,
+    "n1": 26
+   },
+   "inputs": [
+    "low"
+   ],
+   "template": "100 * ({n} - ts_argmin(low, {n1})) / {n}",
+   "notes": ""
+  },
+  {
+   "name": "AROON_OSC",
+   "expanded_dsl": "100 * (25 - ts_argmax(high, 26)) / 25 - 100 * (25 - ts_argmin(low, 26)) / 25",
+   "canonical_dsl": "100 * (25 - ts_argmax(high, 26)) / 25 - 100 * (25 - ts_argmin(low, 26)) / 25",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 5260,
+   "expansion_status": "exact",
+   "aliases": [
+    "아룬",
+    "aroon",
+    "아룬 오실레이터"
+   ],
+   "default_params": {
+    "n": 25,
+    "n1": 26
+   },
+   "inputs": [
+    "high",
+    "low"
+   ],
+   "template": "100 * ({n} - ts_argmax(high, {n1})) / {n} - 100 * ({n} - ts_argmin(low, {n1})) / {n}",
+   "notes": ""
+  },
+  {
+   "name": "BETA",
+   "expanded_dsl": "ts_cov(ts_returns(close, 1), ts_returns(vwap, 1), 60) / (ts_var(ts_returns(vwap, 1), 60) + 1e-12)",
+   "canonical_dsl": "ts_cov(ts_returns(close, 1), ts_returns(vwap, 1), 60) / (ts_var(ts_returns(vwap, 1), 60) + 1e-12)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 1.35e-08,
+   "steady_rel_diff": 1e-08,
+   "steady_corr": 1.0,
+   "n_compared": 3300,
+   "expansion_status": "exact",
+   "aliases": [
+    "베타",
+    "회귀 베타",
+    "시장 베타",
+    "beta"
+   ],
+   "default_params": {
+    "n": 60
+   },
+   "inputs": [
+    "close",
+    "vwap"
+   ],
+   "template": "ts_cov(ts_returns(close, 1), ts_returns(vwap, 1), {n}) / (ts_var(ts_returns(vwap, 1), {n}) + 1e-12)",
+   "notes": "일반형 beta(x, y, n). 시장지수 필드가 없어 예시는 vwap 대비 — 실사용은 시장 필드 추가 후 (extension)"
+  },
+  {
+   "name": "CORREL",
+   "expanded_dsl": "ts_corr(close, volume, 30)",
+   "canonical_dsl": "ts_corr(close, volume, 30)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 4700,
+   "expansion_status": "exact",
+   "aliases": [
+    "상관계수",
+    "correlation",
+    "상관"
+   ],
+   "default_params": {
+    "n": 30
+   },
+   "inputs": [
+    "close",
+    "volume"
+   ],
+   "template": "ts_corr(close, volume, {n})",
+   "notes": ""
+  },
+  {
+   "name": "LINEARREG_SLOPE",
+   "expanded_dsl": "ts_slope(close, 14)",
+   "canonical_dsl": "ts_slope(close, 14)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6940,
+   "expansion_status": "exact",
+   "aliases": [
+    "회귀 기울기",
+    "linear regression slope",
+    "추세 기울기"
+   ],
+   "default_params": {
+    "n": 14
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_slope(close, {n})",
+   "notes": ""
+  },
+  {
+   "name": "STDDEV",
+   "expanded_dsl": "ts_std(close, 20)",
+   "canonical_dsl": "ts_std(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "표준편차",
+    "standard deviation",
+    "변동성"
+   ],
+   "default_params": {
+    "n": 20
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_std(close, {n})",
+   "notes": "표본표준편차(ddof=1). TA-Lib 기본은 ddof=0. 변동성 팩터 의도라면 가격이 아니라 수익률에 적용할 것 (W_STD_PRICE)"
+  },
+  {
+   "name": "VAR",
+   "expanded_dsl": "ts_var(close, 20)",
+   "canonical_dsl": "ts_var(close, 20)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0,
+   "steady_rel_diff": 0.0,
+   "steady_corr": 1.0,
+   "n_compared": 6100,
+   "expansion_status": "exact",
+   "aliases": [
+    "분산",
+    "variance"
+   ],
+   "default_params": {
+    "n": 20
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "ts_var(close, {n})",
+   "notes": "STDDEV 주석과 동일"
+  },
+  {
+   "name": "TRIX",
+   "expanded_dsl": "100 * ts_returns(ts_ewm(ts_ewm(ts_ewm(close, 15), 15), 15), 1)",
+   "canonical_dsl": "100 * ts_returns(ts_ewm(ts_ewm(ts_ewm(close, 15), 15), 15), 1)",
+   "n_validate_errors": 0,
+   "steady_max_abs_diff": 0.0061580028,
+   "steady_rel_diff": 0.02057221,
+   "steady_corr": 1.0,
+   "n_compared": 6800,
+   "expansion_status": "approximate",
+   "aliases": [
+    "트릭스",
+    "trix",
+    "삼중 지수평활"
+   ],
+   "default_params": {
+    "n": 15
+   },
+   "inputs": [
+    "close"
+   ],
+   "template": "100 * ts_returns(ts_ewm(ts_ewm(ts_ewm(close, {n}), {n}), {n}), 1)",
+   "notes": "삼중 EMA 의 1기간 변화율 — adjust 시드 차이는 정상상태 수렴"
+  }
+ ],
+ "extension_queue": [
+  {
+   "name": "ADX",
+   "reason": "Wilder DI 재귀 + 이중 평활 — 상태 기반"
+  },
+  {
+   "name": "SAR",
+   "reason": "가속계수 상태머신 — AST 전개 불가"
+  },
+  {
+   "name": "KAMA",
+   "reason": "효율비 기반 가변 alpha — 상태 기반"
+  },
+  {
+   "name": "MAMA",
+   "reason": "Hilbert 변환 계열"
+  },
+  {
+   "name": "T3",
+   "reason": "6중 EMA 합성 — 전개 가능하나 검증 비용 대비 후순위"
+  },
+  {
+   "name": "STOCHRSI",
+   "reason": "RSI 의 롤링 min/max 재정규화 — 전개 가능, 다음 배치"
+  },
+  {
+   "name": "ULTOSC",
+   "reason": "3중 창 가중 합성 — 전개 가능, 다음 배치"
+  },
+  {
+   "name": "HT_TRENDLINE",
+   "reason": "Hilbert 변환 계열"
+  }
+ ]
+}

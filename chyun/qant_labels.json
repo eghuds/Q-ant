@@ -1,0 +1,8193 @@
+{
+ "meta": {
+  "model": "gpt-4o-2024-11-20",
+  "n_labeled": 259,
+  "status_counts": {
+   "verified": 66,
+   "unverifiable": 68,
+   "reassigned": 102,
+   "verified_flipped": 23
+  },
+  "normalizer_version": "0.4.0",
+  "remap": {
+   "remapped": 18,
+   "unchanged": 241,
+   "orphan": 0,
+   "n_out": 259
+  }
+ },
+ "labels": {
+  "2c8418f22471": {
+   "id": "2c8418f22471",
+   "category": "reversal",
+   "meaning": "최근 5일 내 주가 하락 변동성의 극대화 시점을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "리버설",
+    "변동성",
+    "하락",
+    "극대화",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.375
+    ],
+    [
+     "revers",
+     0.375
+    ],
+    [
+     "range_pos",
+     -0.349
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.375,
+   "remap_status": "remapped",
+   "id_prev": "6d6c43e0a3f3"
+  },
+  "d916d86fd1dc": {
+   "id": "d916d86fd1dc",
+   "category": "correlation",
+   "meaning": "거래량 변화와 주가 변동률 간의 단기 상관관계 측정",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "거래량",
+    "주가",
+    "변동률",
+    "단기"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.067
+    ],
+    [
+     "mom20",
+     -0.045
+    ],
+    [
+     "vol20",
+     0.023
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "42792ada5d0f": {
+   "id": "42792ada5d0f",
+   "category": "correlation",
+   "meaning": "시가와 거래량 간의 10일 상관관계 측정",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "시가",
+    "거래량",
+    "10일",
+    "음의"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.3
+    ],
+    [
+     "vol20",
+     0.074
+    ],
+    [
+     "range_pos",
+     -0.033
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.3,
+   "remap_status": "unchanged"
+  },
+  "17a961df9b0a": {
+   "id": "17a961df9b0a",
+   "category": "range_position",
+   "meaning": "최근 9일 동안 저가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "저가",
+    "순위",
+    "범위",
+    "위치",
+    "9일"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.48
+    ],
+    [
+     "revers",
+     0.48
+    ],
+    [
+     "range_pos",
+     -0.394
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.48,
+   "remap_status": "unchanged"
+  },
+  "1639f87b8d13": {
+   "id": "1639f87b8d13",
+   "category": "mixed",
+   "meaning": "시가와 VWAP 간 괴리 및 종가와 VWAP 간 괴리의 결합 효과 측정",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "시가",
+    "VWAP",
+    "괴리",
+    "종가",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.477
+    ],
+    [
+     "mom5",
+     -0.461
+    ],
+    [
+     "revers",
+     0.461
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.477,
+   "remap_status": "unchanged"
+  },
+  "2d17f8286fff": {
+   "id": "2d17f8286fff",
+   "category": "correlation",
+   "meaning": "시가와 거래량 간의 10일 상관관계 측정",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "시가",
+    "거래량",
+    "10일",
+    "음의"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.507
+    ],
+    [
+     "range_pos",
+     0.068
+    ],
+    [
+     "mom5",
+     0.051
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.507,
+   "remap_status": "unchanged"
+  },
+  "5736a5fd6c63": {
+   "id": "5736a5fd6c63",
+   "category": "volatility",
+   "meaning": "7일 주가 변화의 절대값 변동성과 거래량 조건에 따른 순위 측정",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "거래량",
+    "주가",
+    "7일",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.138
+    ],
+    [
+     "rel_volume",
+     0.128
+    ],
+    [
+     "size",
+     -0.081
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "0bfd241f6408": {
+   "id": "0bfd241f6408",
+   "category": "momentum",
+   "meaning": "5일간 시가와 수익률의 곱의 변화량을 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "시가",
+    "수익률",
+    "변화량",
+    "5일"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.598
+    ],
+    [
+     "revers",
+     0.598
+    ],
+    [
+     "range_pos",
+     -0.284
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.598,
+   "remap_status": "remapped",
+   "id_prev": "edb8ffa3be11"
+  },
+  "9eaaf2839452": {
+   "id": "9eaaf2839452",
+   "category": "reversal",
+   "meaning": "최근 5일간 주가 변화 방향에 따른 반전 가능성 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "리버설",
+    "주가",
+    "반전",
+    "5일",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.083
+    ],
+    [
+     "mom5",
+     -0.073
+    ],
+    [
+     "revers",
+     0.073
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "c58a2b2b8921": {
+   "id": "c58a2b2b8921",
+   "category": "reversal",
+   "meaning": "최근 4일간 주가 변화 방향에 따른 반전 가능성 순위 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "리버설",
+    "주가",
+    "반전",
+    "4일",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.13
+    ],
+    [
+     "mom5",
+     -0.041
+    ],
+    [
+     "revers",
+     0.041
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "c6d31eca8c61": {
+   "id": "c6d31eca8c61",
+   "category": "mixed",
+   "meaning": "VWAP와 종가 간 괴리와 거래량 변화의 결합 효과 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "+",
+   "keywords": [
+    "VWAP",
+    "종가",
+    "괴리",
+    "거래량",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.474
+    ],
+    [
+     "liq",
+     0.167
+    ],
+    [
+     "range_pos",
+     -0.027
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.474,
+   "remap_status": "unchanged"
+  },
+  "77a6c0c791a2": {
+   "id": "77a6c0c791a2",
+   "category": "reversal",
+   "meaning": "거래량 변화와 주가 변화의 반대 방향성을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "리버설",
+    "거래량",
+    "주가",
+    "변화",
+    "반대"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.024
+    ],
+    [
+     "revers",
+     -0.024
+    ],
+    [
+     "range_pos",
+     0.016
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "552126e3f510": {
+   "id": "552126e3f510",
+   "category": "correlation",
+   "meaning": "종가와 거래량 간의 5일 공분산 순위를 측정",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "공분산",
+    "종가",
+    "거래량",
+    "5일",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.044
+    ],
+    [
+     "mom5",
+     -0.04
+    ],
+    [
+     "revers",
+     0.04
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "bf8d21eeace2": {
+   "id": "bf8d21eeace2",
+   "category": "mixed",
+   "meaning": "수익률 변화와 시가-거래량 상관관계의 결합 효과 측정",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "수익률",
+    "시가",
+    "거래량",
+    "상관관계",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.446
+    ],
+    [
+     "range_pos",
+     0.054
+    ],
+    [
+     "mom5",
+     0.044
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.446,
+   "remap_status": "remapped",
+   "id_prev": "90c65c1a546c"
+  },
+  "da9e5137a501": {
+   "id": "da9e5137a501",
+   "category": "correlation",
+   "meaning": "고가와 거래량 간의 3일 상관관계 순위 합계를 측정",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "고가",
+    "거래량",
+    "3일",
+    "합계"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.081
+    ],
+    [
+     "vol20",
+     -0.08
+    ],
+    [
+     "liq",
+     0.067
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "692efe458053": {
+   "id": "692efe458053",
+   "category": "correlation",
+   "meaning": "고가와 거래량 간의 5일 공분산 순위를 측정",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "공분산",
+    "고가",
+    "거래량",
+    "5일",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.065
+    ],
+    [
+     "vol20",
+     0.033
+    ],
+    [
+     "mom5",
+     -0.03
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "4886be0b1fb2": {
+   "id": "4886be0b1fb2",
+   "category": "mixed",
+   "meaning": "종가 순위, 주가 변화율, 거래량/평균 거래량의 결합 효과 측정",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "종가",
+    "주가",
+    "거래량",
+    "평균",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.379
+    ],
+    [
+     "rel_volume",
+     -0.342
+    ],
+    [
+     "mom5",
+     -0.34
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.379,
+   "remap_status": "unchanged"
+  },
+  "fa4ed46db1da": {
+   "id": "fa4ed46db1da",
+   "category": "volatility",
+   "meaning": "시가와 종가 간 변동성과 상관관계의 결합 효과 측정",
+   "direction_ref": "price_level",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "시가",
+    "종가",
+    "상관관계",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.283
+    ],
+    [
+     "size",
+     -0.249
+    ],
+    [
+     "liq",
+     -0.231
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.283,
+   "remap_status": "unchanged"
+  },
+  "0e045cd86353": {
+   "id": "0e045cd86353",
+   "category": "momentum",
+   "meaning": "7일 주가 변화 방향과 250일 수익률 합계의 결합 효과 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "주가",
+    "수익률",
+    "7일",
+    "250일"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.676
+    ],
+    [
+     "mom5",
+     -0.617
+    ],
+    [
+     "revers",
+     0.617
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.388,
+   "remap_status": "remapped",
+   "id_prev": "ee7a90ff1d4c"
+  },
+  "8fe3db4dd129": {
+   "id": "8fe3db4dd129",
+   "category": "range_position",
+   "meaning": "시가와 전일 고가, 저가, 종가 간의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "시가",
+    "고가",
+    "저가",
+    "종가",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.326
+    ],
+    [
+     "revers",
+     0.326
+    ],
+    [
+     "range_pos",
+     -0.306
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.326,
+   "remap_status": "unchanged"
+  },
+  "a663b9333f3e": {
+   "id": "a663b9333f3e",
+   "category": "mixed",
+   "meaning": "단기와 중기 가격 평균 및 거래량 비율을 활용한 종합적 신호",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "혼합 신호",
+    "가격 평균",
+    "거래량",
+    "단기",
+    "중기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.555
+    ],
+    [
+     "revers",
+     0.555
+    ],
+    [
+     "range_pos",
+     -0.482
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.555,
+   "remap_status": "unchanged"
+  },
+  "2b0109f75814": {
+   "id": "2b0109f75814",
+   "category": "correlation",
+   "meaning": "고가와 거래량의 상관관계 변화와 종가 변동성의 결합",
+   "direction_ref": "vol20",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "변동성",
+    "고가",
+    "거래량",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.05
+    ],
+    [
+     "rel_volume",
+     0.039
+    ],
+    [
+     "liq",
+     0.02
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "b1f46bf32609": {
+   "id": "b1f46bf32609",
+   "category": "reversal",
+   "meaning": "20일 평균 고가 대비 현재 고가의 반전 신호",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "반전",
+    "고가",
+    "평균",
+    "단기",
+    "신호"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.147
+    ],
+    [
+     "revers",
+     0.147
+    ],
+    [
+     "price_level",
+     -0.141
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "2a746b788df5": {
+   "id": "2a746b788df5",
+   "category": "momentum",
+   "meaning": "100일 평균 가격 변화와 단기 가격 변동성의 결합",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "가격 변화",
+    "단기",
+    "100일",
+    "변동성"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.245
+    ],
+    [
+     "revers",
+     0.245
+    ],
+    [
+     "range_pos",
+     -0.183
+    ]
+   ],
+   "reassign_from": "mom20",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.245,
+   "remap_status": "unchanged"
+  },
+  "d89248d56bad": {
+   "id": "d89248d56bad",
+   "category": "volume_liquidity",
+   "meaning": "거래량, 유동성, 고가와 종가 차이를 활용한 신호",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "고가",
+    "종가",
+    "신호"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.307
+    ],
+    [
+     "revers",
+     0.307
+    ],
+    [
+     "range_pos",
+     -0.296
+    ]
+   ],
+   "reassign_from": "liq",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.307,
+   "remap_status": "remapped",
+   "id_prev": "6d7d12fa510d"
+  },
+  "c673118ce32e": {
+   "id": "c673118ce32e",
+   "category": "correlation",
+   "meaning": "거래량과 고가의 순위 상관관계 최대값의 반전 신호",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "거래량",
+    "고가",
+    "반전",
+    "최대값"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.18
+    ],
+    [
+     "mom20",
+     0.032
+    ],
+    [
+     "liq",
+     -0.032
+    ]
+   ],
+   "reassign_from": "revers",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.18,
+   "remap_status": "unchanged"
+  },
+  "b0017d9d03ec": {
+   "id": "b0017d9d03ec",
+   "category": "sector_relative",
+   "meaning": "섹터 내 거래량과 VWAP 상관관계 기반의 상대적 신호",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "섹터",
+    "상대적",
+    "거래량",
+    "VWAP",
+    "상관관계"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.106
+    ],
+    [
+     "price_level",
+     0.086
+    ],
+    [
+     "pv_corr",
+     -0.083
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "5b23bada691c": {
+   "id": "5b23bada691c",
+   "category": "correlation",
+   "meaning": "거래량과 저가의 상관관계 및 가격 중심값과 종가 차이",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "상관관계",
+    "거래량",
+    "저가",
+    "중심값",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.049
+    ],
+    [
+     "rel_volume",
+     -0.041
+    ],
+    [
+     "price_level",
+     0.023
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "7d27755a31ed": {
+   "id": "7d27755a31ed",
+   "category": "mixed",
+   "meaning": "다중 순위 및 지연 수익률을 활용한 복합 신호",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "혼합 신호",
+    "순위",
+    "지연",
+    "수익률",
+    "복합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.365
+    ],
+    [
+     "mom5",
+     -0.278
+    ],
+    [
+     "revers",
+     0.278
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.365,
+   "remap_status": "remapped",
+   "id_prev": "4e06c0e23bfa"
+  },
+  "535935404607": {
+   "id": "535935404607",
+   "category": "volume_liquidity",
+   "meaning": "단기와 장기 거래량 비율과 가격 변화 방향성",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "단기",
+    "장기",
+    "비율",
+    "방향성"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.492
+    ],
+    [
+     "revers",
+     0.492
+    ],
+    [
+     "range_pos",
+     -0.428
+    ]
+   ],
+   "reassign_from": "liq",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.492,
+   "remap_status": "unchanged"
+  },
+  "24ea493bfeec": {
+   "id": "24ea493bfeec",
+   "category": "momentum",
+   "meaning": "10일 가격 변화와 3일 가격 변화의 결합 신호",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "가격 변화",
+    "10일",
+    "3일",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.295
+    ],
+    [
+     "mom20",
+     -0.258
+    ],
+    [
+     "mom5",
+     -0.204
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.204,
+   "remap_status": "unchanged"
+  },
+  "89487e60b136": {
+   "id": "89487e60b136",
+   "category": "correlation",
+   "meaning": "7일 평균 가격과 VWAP-종가 상관관계의 결합",
+   "direction_ref": "size",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "평균 가격",
+    "VWAP",
+    "종가",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     0.273
+    ],
+    [
+     "mom5",
+     -0.239
+    ],
+    [
+     "revers",
+     0.239
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.273,
+   "remap_status": "unchanged"
+  },
+  "2b34a8aadcf1": {
+   "id": "2b34a8aadcf1",
+   "category": "range_position",
+   "meaning": "시가 대비 종가의 상대적 위치를 활용한 신호",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "시가",
+    "종가",
+    "상대적 위치",
+    "범위",
+    "신호"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.027
+    ],
+    [
+     "size",
+     -0.011
+    ],
+    [
+     "range_pos",
+     -0.01
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "70fb95457505": {
+   "id": "70fb95457505",
+   "category": "volatility",
+   "meaning": "단기 수익률 변동성과 가격 변화의 결합 신호",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "수익률",
+    "단기",
+    "가격 변화",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.25
+    ],
+    [
+     "revers",
+     0.25
+    ],
+    [
+     "range_pos",
+     -0.246
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.25,
+   "remap_status": "remapped",
+   "id_prev": "d9e3ee389966"
+  },
+  "58eeaab12f2d": {
+   "id": "58eeaab12f2d",
+   "category": "volume_liquidity",
+   "meaning": "거래량 순위와 가격 범위 순위를 활용한 신호",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "순위",
+    "가격 범위",
+    "신호",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.563
+    ],
+    [
+     "mom5",
+     -0.497
+    ],
+    [
+     "revers",
+     0.497
+    ]
+   ],
+   "reassign_from": "liq",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.563,
+   "remap_status": "remapped",
+   "id_prev": "ba8ed241a8e4"
+  },
+  "cef2bbac7799": {
+   "id": "cef2bbac7799",
+   "category": "mixed",
+   "meaning": "가격, 거래량, 수익률 상관관계와 가격 변화의 종합 신호",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "혼합 신호",
+    "가격",
+    "거래량",
+    "수익률",
+    "상관관계"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.168
+    ],
+    [
+     "price_level",
+     0.124
+    ],
+    [
+     "mom5",
+     -0.067
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.168,
+   "remap_status": "remapped",
+   "id_prev": "23da0270feb3"
+  },
+  "b606d4c9d8a7": {
+   "id": "b606d4c9d8a7",
+   "category": "correlation",
+   "meaning": "시가-종가 차이와 종가의 장기 상관관계",
+   "direction_ref": "price_level",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "시가",
+    "종가",
+    "차이",
+    "장기"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     0.156
+    ],
+    [
+     "liq",
+     0.136
+    ],
+    [
+     "vol20",
+     -0.072
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.156,
+   "remap_status": "unchanged"
+  },
+  "451afa68ae3d": {
+   "id": "451afa68ae3d",
+   "category": "range_position",
+   "meaning": "10일 종가 순위와 시가 대비 종가 비율의 결합",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "종가",
+    "순위",
+    "시가",
+    "비율",
+    "범위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.528
+    ],
+    [
+     "mom5",
+     -0.495
+    ],
+    [
+     "revers",
+     0.495
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.528,
+   "remap_status": "unchanged"
+  },
+  "2f6f49fe9515": {
+   "id": "2f6f49fe9515",
+   "category": "momentum",
+   "meaning": "7일 가격 변화와 거래량 비율의 결합 신호",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "가격 변화",
+    "거래량",
+    "비율",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.682
+    ],
+    [
+     "mom5",
+     -0.619
+    ],
+    [
+     "revers",
+     0.619
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.619,
+   "remap_status": "remapped",
+   "id_prev": "1523565cc481"
+  },
+  "89ad475560e0": {
+   "id": "89ad475560e0",
+   "category": "volatility",
+   "meaning": "10일 고가 변동성과 거래량 상관관계의 결합",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "고가",
+    "거래량",
+    "상관관계",
+    "결합"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.464
+    ],
+    [
+     "range_pos",
+     0.063
+    ],
+    [
+     "mom5",
+     0.056
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.464,
+   "remap_status": "unchanged"
+  },
+  "dcf2701de083": {
+   "id": "dcf2701de083",
+   "category": "range_position",
+   "meaning": "고가와 저가의 기하평균과 VWAP 간의 차이를 측정",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "고가",
+    "저가",
+    "VWAP",
+    "범위",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.029
+    ],
+    [
+     "rel_volume",
+     -0.016
+    ],
+    [
+     "vol20",
+     -0.013
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "654bf2cf3cc2": {
+   "id": "654bf2cf3cc2",
+   "category": "sector_relative",
+   "meaning": "종목의 VWAP와 종가 차이의 상대적 순위 비율을 측정",
+   "direction_ref": "price_level",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "종가",
+    "순위",
+    "횡단면",
+    "상대"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.658
+    ],
+    [
+     "liq",
+     -0.482
+    ],
+    [
+     "size",
+     -0.478
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.658,
+   "remap_status": "unchanged"
+  },
+  "a87f2033bcf5": {
+   "id": "a87f2033bcf5",
+   "category": "momentum",
+   "meaning": "거래량과 20일 평균 거래량 비율 및 7일 종가 변화율의 순위를 결합",
+   "direction_ref": "rel_volume",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "거래량",
+    "순위",
+    "변화율",
+    "단기"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.566
+    ],
+    [
+     "mom5",
+     -0.388
+    ],
+    [
+     "revers",
+     0.388
+    ]
+   ],
+   "reassign_from": "mom20",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.566,
+   "remap_status": "unchanged"
+  },
+  "3387509dbd7b": {
+   "id": "3387509dbd7b",
+   "category": "correlation",
+   "meaning": "고가와 거래량 순위 간의 5일 상관관계의 음수",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "고가",
+    "거래량",
+    "단기",
+    "음수"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.194
+    ],
+    [
+     "vol20",
+     0.029
+    ],
+    [
+     "range_pos",
+     0.024
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.194,
+   "remap_status": "unchanged"
+  },
+  "edb88e76616e": {
+   "id": "edb88e76616e",
+   "category": "mixed",
+   "meaning": "종가와 거래량의 단기 상관관계 및 과거 평균 종가의 순위 결합",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "혼합",
+    "종가",
+    "거래량",
+    "순위",
+    "상관"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.051
+    ],
+    [
+     "price_level",
+     0.027
+    ],
+    [
+     "mom5",
+     0.025
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "6d4d43f122a0": {
+   "id": "6d4d43f122a0",
+   "category": "reversal",
+   "meaning": "20일과 10일 종가 변화율 대비 현재 종가의 반전 여부",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "반전",
+    "종가",
+    "변화율",
+    "단기",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.21
+    ],
+    [
+     "revers",
+     0.21
+    ],
+    [
+     "range_pos",
+     -0.177
+    ]
+   ],
+   "flip_from": "-",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": 0.21,
+   "remap_status": "unchanged"
+  },
+  "a32f4382b6af": {
+   "id": "a32f4382b6af",
+   "category": "volume_liquidity",
+   "meaning": "거래량, 종가, 고가, VWAP의 순위 및 평균을 결합한 유동성 지표",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "유동성",
+    "거래량",
+    "순위",
+    "VWAP",
+    "고가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.797
+    ],
+    [
+     "revers",
+     0.797
+    ],
+    [
+     "range_pos",
+     -0.637
+    ]
+   ],
+   "reassign_from": "liq",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.797,
+   "remap_status": "unchanged"
+  },
+  "5ca6f2a273aa": {
+   "id": "5ca6f2a273aa",
+   "category": "sector_relative",
+   "meaning": "산업 내 종가 변화율 상관관계와 변동성의 상대적 순위",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "섹터",
+    "상대",
+    "변동성",
+    "종가",
+    "상관"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     0.033
+    ],
+    [
+     "pv_corr",
+     -0.031
+    ],
+    [
+     "range_pos",
+     0.019
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "b30dba8c6208"
+  },
+  "b6afe1e6629f": {
+   "id": "b6afe1e6629f",
+   "category": "reversal",
+   "meaning": "20일과 10일 종가 변화율 대비 현재 종가의 반전 여부",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "반전",
+    "종가",
+    "변화율",
+    "단기",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.139
+    ],
+    [
+     "revers",
+     0.139
+    ],
+    [
+     "range_pos",
+     -0.119
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "097fba9171e5": {
+   "id": "097fba9171e5",
+   "category": "correlation",
+   "meaning": "거래량과 VWAP 순위 간의 5일 상관관계의 최대값 음수",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "상관관계",
+    "거래량",
+    "VWAP",
+    "단기",
+    "음수"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     0.099
+    ],
+    [
+     "liq",
+     0.077
+    ],
+    [
+     "price_level",
+     0.063
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "6a0c4c76f97a": {
+   "id": "6a0c4c76f97a",
+   "category": "reversal",
+   "meaning": "20일과 10일 종가 변화율 대비 현재 종가의 반전 여부",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "반전",
+    "종가",
+    "변화율",
+    "단기",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.138
+    ],
+    [
+     "revers",
+     0.138
+    ],
+    [
+     "range_pos",
+     -0.119
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "cebe1d97524b": {
+   "id": "cebe1d97524b",
+   "category": "momentum",
+   "meaning": "저가의 5일 최저치 변화와 장기 수익률 차이 및 거래량 순위 결합",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "저가",
+    "수익률",
+    "거래량",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.128
+    ],
+    [
+     "mom5",
+     -0.104
+    ],
+    [
+     "revers",
+     0.104
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "098924d10274"
+  },
+  "6603e0b50017": {
+   "id": "6603e0b50017",
+   "category": "candle_pattern",
+   "meaning": "캔들스틱 패턴의 9일 변화율을 측정",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들",
+    "패턴",
+    "변화율",
+    "단기",
+    "가격"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.029
+    ],
+    [
+     "revers",
+     0.029
+    ],
+    [
+     "mom20",
+     0.019
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "e23f2e7ebf9a": {
+   "id": "e23f2e7ebf9a",
+   "category": "candle_pattern",
+   "meaning": "저가와 종가의 차이를 캔들스틱 패턴으로 분석",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들",
+    "저가",
+    "종가",
+    "패턴",
+    "분석"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.04
+    ],
+    [
+     "liq",
+     0.027
+    ],
+    [
+     "price_level",
+     0.024
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "030590e0ed9d": {
+   "id": "030590e0ed9d",
+   "category": "correlation",
+   "meaning": "12일 고저 범위와 거래량 순위 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "상관관계",
+    "고저",
+    "범위",
+    "거래량",
+    "단기"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.17
+    ],
+    [
+     "vol20",
+     0.035
+    ],
+    [
+     "mom20",
+     -0.022
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.17,
+   "remap_status": "unchanged"
+  },
+  "d3795a46f8f0": {
+   "id": "d3795a46f8f0",
+   "category": "size_value",
+   "meaning": "10일 수익률과 시가총액의 상대적 순위",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "시가총액",
+    "수익률",
+    "순위",
+    "가치",
+    "크기"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.278
+    ],
+    [
+     "mom5",
+     -0.263
+    ],
+    [
+     "revers",
+     0.263
+    ]
+   ],
+   "reassign_from": "size",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.278,
+   "remap_status": "remapped",
+   "id_prev": "1a9ac0045a23"
+  },
+  "119e8426994f": {
+   "id": "119e8426994f",
+   "category": "trend",
+   "meaning": "종가와 VWAP 차이와 30일 최고가의 순위 변화율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "추세",
+    "종가",
+    "VWAP",
+    "순위",
+    "변화율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.031
+    ],
+    [
+     "pv_corr",
+     -0.029
+    ],
+    [
+     "price_level",
+     0.022
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "bb3e0b5a36e2": {
+   "id": "bb3e0b5a36e2",
+   "category": "sector_relative",
+   "meaning": "섹터 내 VWAP과 거래량 상관관계의 단기 순위",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "섹터",
+    "VWAP",
+    "거래량",
+    "상관",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.019
+    ],
+    [
+     "pv_corr",
+     0.019
+    ],
+    [
+     "liq",
+     0.011
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "e510f776bb6d": {
+   "id": "e510f776bb6d",
+   "category": "sector_relative",
+   "meaning": "산업 내 VWAP과 거래량 상관관계의 단기 순위",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "산업",
+    "VWAP",
+    "거래량",
+    "상관",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.035
+    ],
+    [
+     "mom5",
+     0.024
+    ],
+    [
+     "revers",
+     -0.024
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "4071b168b3ab": {
+   "id": "4071b168b3ab",
+   "category": "range_position",
+   "meaning": "고저 범위 내 종가 위치와 거래량의 상대적 순위",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "범위",
+    "종가",
+    "거래량",
+    "위치",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.326
+    ],
+    [
+     "mom5",
+     -0.227
+    ],
+    [
+     "revers",
+     0.227
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.326,
+   "remap_status": "unchanged"
+  },
+  "941cf635d06f": {
+   "id": "941cf635d06f",
+   "category": "sector_relative",
+   "meaning": "VWAP의 섹터 내 상대적 위치와 거래량 상관성을 비교",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "섹터",
+    "거래량",
+    "상관성",
+    "순위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.222
+    ],
+    [
+     "price_level",
+     -0.185
+    ],
+    [
+     "mom20",
+     -0.168
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.222,
+   "remap_status": "unchanged"
+  },
+  "2b8c990f9e2e": {
+   "id": "2b8c990f9e2e",
+   "category": "mixed",
+   "meaning": "가격과 거래량의 상관성 및 캔들 패턴의 복합적 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "가격",
+    "거래량",
+    "캔들",
+    "상관성",
+    "복합"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.103
+    ],
+    [
+     "pv_corr",
+     -0.07
+    ],
+    [
+     "mom5",
+     0.069
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "0bd70bb5aae8": {
+   "id": "0bd70bb5aae8",
+   "category": "sector_relative",
+   "meaning": "섹터 내 가격 변화와 거래량 상관성의 상대적 비교",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "섹터",
+    "가격",
+    "거래량",
+    "상관성",
+    "상대적"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.312
+    ],
+    [
+     "revers",
+     0.312
+    ],
+    [
+     "liq",
+     -0.167
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.312,
+   "remap_status": "unchanged"
+  },
+  "dfaf448b4827": {
+   "id": "dfaf448b4827",
+   "category": "mixed",
+   "meaning": "가격 중심값 변화와 거래량 상관성의 복합적 비교",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "가격",
+    "중심값",
+    "거래량",
+    "상관성",
+    "복합"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.193
+    ],
+    [
+     "revers",
+     0.193
+    ],
+    [
+     "range_pos",
+     -0.08
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.193,
+   "remap_status": "unchanged"
+  },
+  "531dbafebd06": {
+   "id": "531dbafebd06",
+   "category": "trend",
+   "meaning": "VWAP와 거래량 상관성 및 가격 최저점과의 비교",
+   "direction_ref": "price_level",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "거래량",
+    "가격",
+    "최저점",
+    "상관성"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.282
+    ],
+    [
+     "liq",
+     -0.243
+    ],
+    [
+     "size",
+     -0.216
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.282,
+   "remap_status": "unchanged"
+  },
+  "80ae20ab0c01": {
+   "id": "80ae20ab0c01",
+   "category": "range_position",
+   "meaning": "VWAP와 가격 범위 내 위치의 상대적 변화",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "가격",
+    "범위",
+    "위치",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.465
+    ],
+    [
+     "revers",
+     0.465
+    ],
+    [
+     "range_pos",
+     -0.465
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.465,
+   "remap_status": "unchanged"
+  },
+  "060e1a07ca70": {
+   "id": "060e1a07ca70",
+   "category": "sector_relative",
+   "meaning": "섹터 내 VWAP와 거래량의 상관성 비교",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "섹터",
+    "VWAP",
+    "거래량",
+    "상관성",
+    "비교"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.242
+    ],
+    [
+     "mom5",
+     -0.241
+    ],
+    [
+     "revers",
+     0.241
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.242,
+   "remap_status": "unchanged"
+  },
+  "13cffab34c59": {
+   "id": "13cffab34c59",
+   "category": "momentum",
+   "meaning": "고가와 거래량의 상관성과 종가 변화의 비교",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "거래량",
+    "종가",
+    "상관성",
+    "모멘텀"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.086
+    ],
+    [
+     "mom5",
+     -0.084
+    ],
+    [
+     "revers",
+     0.084
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "0ff55896d0db": {
+   "id": "0ff55896d0db",
+   "category": "sector_relative",
+   "meaning": "섹터 내 VWAP 변화와 거래량 상관성의 비교",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "섹터",
+    "VWAP",
+    "변화",
+    "거래량",
+    "상관성"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.233
+    ],
+    [
+     "revers",
+     0.233
+    ],
+    [
+     "vol20",
+     -0.228
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.233,
+   "remap_status": "unchanged"
+  },
+  "f029dbb1bc74": {
+   "id": "f029dbb1bc74",
+   "category": "sector_relative",
+   "meaning": "섹터 내 종가 변화와 거래량 상관성의 비교",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "섹터",
+    "종가",
+    "변화",
+    "거래량",
+    "상관성"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.251
+    ],
+    [
+     "revers",
+     0.251
+    ],
+    [
+     "range_pos",
+     -0.22
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.251,
+   "remap_status": "unchanged"
+  },
+  "0a4c82692be0": {
+   "id": "0a4c82692be0",
+   "category": "mixed",
+   "meaning": "종가와 거래량 상관성 및 가격 범위 내 위치의 복합적 비교",
+   "direction_ref": "price_level",
+   "direction_sign": "-",
+   "keywords": [
+    "종가",
+    "거래량",
+    "가격",
+    "범위",
+    "복합"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.154
+    ],
+    [
+     "liq",
+     -0.142
+    ],
+    [
+     "size",
+     -0.112
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.154,
+   "remap_status": "unchanged"
+  },
+  "ac10e350eda2": {
+   "id": "ac10e350eda2",
+   "category": "correlation",
+   "meaning": "VWAP와 거래량의 상관성 및 가격 중심값과 거래량의 상관성 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "VWAP",
+    "거래량",
+    "가격",
+    "중심값",
+    "상관성"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.083
+    ],
+    [
+     "price_level",
+     0.075
+    ],
+    [
+     "size",
+     0.057
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "c5c402066a85": {
+   "id": "c5c402066a85",
+   "category": "range_position",
+   "meaning": "VWAP와 가격 범위 내 위치의 상대적 변화",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "가격",
+    "범위",
+    "위치",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.276
+    ],
+    [
+     "range_pos",
+     -0.223
+    ],
+    [
+     "price_level",
+     -0.204
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.276,
+   "remap_status": "unchanged"
+  },
+  "924af5b2a59a": {
+   "id": "924af5b2a59a",
+   "category": "correlation",
+   "meaning": "종가와 거래량 상관성 및 고가와 VWAP의 상관성 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "종가",
+    "거래량",
+    "고가",
+    "VWAP",
+    "상관성"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.115
+    ],
+    [
+     "range_pos",
+     0.095
+    ],
+    [
+     "price_level",
+     0.078
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "8e988a617009": {
+   "id": "8e988a617009",
+   "category": "correlation",
+   "meaning": "VWAP와 거래량 상관성 및 저가와 거래량의 상관성 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "VWAP",
+    "거래량",
+    "저가",
+    "상관성",
+    "비교"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     -0.097
+    ],
+    [
+     "price_level",
+     -0.092
+    ],
+    [
+     "size",
+     -0.088
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "40a9998a606c": {
+   "id": "40a9998a606c",
+   "category": "sector_relative",
+   "meaning": "섹터 내 저가와 거래량 상관성의 상대적 변화",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "섹터",
+    "저가",
+    "거래량",
+    "상관성",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.514
+    ],
+    [
+     "mom5",
+     -0.49
+    ],
+    [
+     "revers",
+     0.49
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.514,
+   "remap_status": "unchanged"
+  },
+  "cdeebf04b724": {
+   "id": "cdeebf04b724",
+   "category": "range_position",
+   "meaning": "가격 중심값과 VWAP의 상대적 위치 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "가격",
+    "중심값",
+    "VWAP",
+    "위치",
+    "비교"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     -0.068
+    ],
+    [
+     "vol20",
+     -0.037
+    ],
+    [
+     "pv_corr",
+     -0.037
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "b75e13629564": {
+   "id": "b75e13629564",
+   "category": "correlation",
+   "meaning": "저가와 VWAP의 상관성 및 VWAP와 거래량의 상관성 비교",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "저가",
+    "VWAP",
+    "거래량",
+    "상관성",
+    "비교"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.1
+    ],
+    [
+     "pv_corr",
+     -0.1
+    ],
+    [
+     "mom20",
+     0.062
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "2fb3260fd8f9": {
+   "id": "2fb3260fd8f9",
+   "category": "sector_relative",
+   "meaning": "섹터 내 종가와 거래량 상관성의 상대적 변화",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "섹터",
+    "종가",
+    "거래량",
+    "상관성",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.13
+    ],
+    [
+     "mom5",
+     -0.093
+    ],
+    [
+     "revers",
+     0.093
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "f60eb8a714f3": {
+   "id": "f60eb8a714f3",
+   "category": "sector_relative",
+   "meaning": "섹터 내 고가와 거래량 상관성의 상대적 변화",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "섹터",
+    "고가",
+    "거래량",
+    "상관성",
+    "변화"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.321
+    ],
+    [
+     "revers",
+     0.321
+    ],
+    [
+     "range_pos",
+     -0.286
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.321,
+   "remap_status": "unchanged"
+  },
+  "7436b00d14b7": {
+   "id": "7436b00d14b7",
+   "category": "correlation",
+   "meaning": "VWAP과 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "상관관계",
+    "거래량",
+    "랭크",
+    "상대강도"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.088
+    ],
+    [
+     "price_level",
+     0.085
+    ],
+    [
+     "range_pos",
+     0.071
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "702df380a4fb": {
+   "id": "702df380a4fb",
+   "category": "sector_relative",
+   "meaning": "섹터 내 거래량과 가격 변화의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "섹터",
+    "거래량",
+    "가격변화",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.43
+    ],
+    [
+     "mom5",
+     -0.335
+    ],
+    [
+     "revers",
+     0.335
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.43,
+   "remap_status": "unchanged"
+  },
+  "a16cbf1b9e77": {
+   "id": "a16cbf1b9e77",
+   "category": "range_position",
+   "meaning": "고가와 저가의 범위 내에서 거래량과 가격의 상대적 위치",
+   "direction_ref": "range_position",
+   "direction_sign": "+",
+   "keywords": [
+    "고가",
+    "저가",
+    "거래량",
+    "범위",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.036
+    ],
+    [
+     "vol20",
+     -0.031
+    ],
+    [
+     "pv_corr",
+     -0.029
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "58437dcf412a": {
+   "id": "58437dcf412a",
+   "category": "momentum",
+   "meaning": "VWAP의 최근 최고치와의 차이와 종가 변화율을 활용한 모멘텀",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "VWAP",
+    "모멘텀",
+    "종가",
+    "변화율",
+    "최고치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.0
+    ],
+    [
+     "mom5",
+     -0.0
+    ],
+    [
+     "revers",
+     0.0
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "0e2e1f0d459b": {
+   "id": "0e2e1f0d459b",
+   "category": "correlation",
+   "meaning": "고가와 종가의 가중 평균과 거래량의 상관관계",
+   "direction_ref": "correlation",
+   "direction_sign": "+",
+   "keywords": [
+    "고가",
+    "종가",
+    "거래량",
+    "상관관계",
+    "가중평균"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.059
+    ],
+    [
+     "mom5",
+     -0.031
+    ],
+    [
+     "revers",
+     0.031
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "474942ea2c78": {
+   "id": "474942ea2c78",
+   "category": "reversal",
+   "meaning": "종가와 VWAP의 차이를 활용한 반전 신호",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "종가",
+    "VWAP",
+    "반전",
+    "차이",
+    "신호"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.034
+    ],
+    [
+     "liq",
+     0.033
+    ],
+    [
+     "size",
+     0.031
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "962e544b29d7": {
+   "id": "962e544b29d7",
+   "category": "sector_relative",
+   "meaning": "산업 내 거래량과 종가의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "산업",
+    "거래량",
+    "종가",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.294
+    ],
+    [
+     "revers",
+     0.294
+    ],
+    [
+     "range_pos",
+     -0.254
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.294,
+   "remap_status": "unchanged"
+  },
+  "938c51646172": {
+   "id": "938c51646172",
+   "category": "trend",
+   "meaning": "고가, 저가, 종가의 랭크와 상관관계를 활용한 추세 분석",
+   "direction_ref": "trend",
+   "direction_sign": "+",
+   "keywords": [
+    "고가",
+    "저가",
+    "종가",
+    "랭크",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.055
+    ],
+    [
+     "range_pos",
+     0.027
+    ],
+    [
+     "pv_corr",
+     -0.026
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "57bdd54889a5": {
+   "id": "57bdd54889a5",
+   "category": "sector_relative",
+   "meaning": "산업 내 VWAP과 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "산업",
+    "VWAP",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.273
+    ],
+    [
+     "revers",
+     0.273
+    ],
+    [
+     "range_pos",
+     -0.172
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.273,
+   "remap_status": "unchanged"
+  },
+  "ae5be8af0377": {
+   "id": "ae5be8af0377",
+   "category": "sector_relative",
+   "meaning": "산업 내 거래량과 저가의 상관관계와 종가의 랭크를 활용한 상대적 강도",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "산업",
+    "거래량",
+    "저가",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.442
+    ],
+    [
+     "revers",
+     0.442
+    ],
+    [
+     "range_pos",
+     -0.397
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.442,
+   "remap_status": "unchanged"
+  },
+  "61cef3b9d7ed": {
+   "id": "61cef3b9d7ed",
+   "category": "sector_relative",
+   "meaning": "산업 내 종가와 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "sector_relative",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "종가",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.027
+    ],
+    [
+     "vol20",
+     0.021
+    ],
+    [
+     "rel_volume",
+     -0.017
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "70124c0c4661": {
+   "id": "70124c0c4661",
+   "category": "trend",
+   "meaning": "고가, 저가, 종가의 랭크와 상관관계를 활용한 추세 분석",
+   "direction_ref": "trend",
+   "direction_sign": "+",
+   "keywords": [
+    "고가",
+    "저가",
+    "종가",
+    "랭크",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "liq",
+     0.038
+    ],
+    [
+     "range_pos",
+     0.038
+    ],
+    [
+     "price_level",
+     0.034
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "0a258c062cc9": {
+   "id": "0a258c062cc9",
+   "category": "sector_relative",
+   "meaning": "산업 내 VWAP과 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "VWAP",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.349
+    ],
+    [
+     "mom20",
+     -0.293
+    ],
+    [
+     "mom5",
+     -0.282
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.349,
+   "remap_status": "unchanged"
+  },
+  "86c3ad521c5c": {
+   "id": "86c3ad521c5c",
+   "category": "momentum",
+   "meaning": "VWAP의 최근 최저치와의 차이와 거래량의 상관관계를 활용한 모멘텀",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "VWAP",
+    "모멘텀",
+    "최저치",
+    "거래량",
+    "상관관계"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.58
+    ],
+    [
+     "mom5",
+     -0.537
+    ],
+    [
+     "revers",
+     0.537
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.537,
+   "remap_status": "unchanged"
+  },
+  "7f26908bcf9d": {
+   "id": "7f26908bcf9d",
+   "category": "range_position",
+   "meaning": "고가와 저가의 범위 내에서 거래량과 가격의 상대적 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "저가",
+    "거래량",
+    "범위",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.233
+    ],
+    [
+     "mom5",
+     -0.218
+    ],
+    [
+     "revers",
+     0.218
+    ]
+   ],
+   "reassign_from": "range_position",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.233,
+   "remap_status": "unchanged"
+  },
+  "57162ac34068": {
+   "id": "57162ac34068",
+   "category": "sector_relative",
+   "meaning": "산업 내 VWAP과 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "sector_relative",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "VWAP",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.057
+    ],
+    [
+     "revers",
+     -0.057
+    ],
+    [
+     "liq",
+     -0.041
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "590f376d8de1": {
+   "id": "590f376d8de1",
+   "category": "sector_relative",
+   "meaning": "산업 내 저가와 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "저가",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.213
+    ],
+    [
+     "mom20",
+     -0.143
+    ],
+    [
+     "mom5",
+     -0.104
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.213,
+   "remap_status": "unchanged"
+  },
+  "c2f98b16e5b7": {
+   "id": "c2f98b16e5b7",
+   "category": "sector_relative",
+   "meaning": "산업 내 VWAP과 거래량의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "sector_relative",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "VWAP",
+    "거래량",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     -0.066
+    ],
+    [
+     "pv_corr",
+     -0.065
+    ],
+    [
+     "mom20",
+     0.049
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "baa4c7262c2b": {
+   "id": "baa4c7262c2b",
+   "category": "sector_relative",
+   "meaning": "산업 내 고가와 저가의 상관관계와 랭크를 활용한 상대적 강도",
+   "direction_ref": "pv_corr",
+   "direction_sign": "-",
+   "keywords": [
+    "산업",
+    "고가",
+    "저가",
+    "상관관계",
+    "랭크"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.209
+    ],
+    [
+     "range_pos",
+     0.118
+    ],
+    [
+     "mom20",
+     0.067
+    ]
+   ],
+   "reassign_from": "sector_relative",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.209,
+   "remap_status": "unchanged"
+  },
+  "6962910b71fe": {
+   "id": "6962910b71fe",
+   "category": "volume_liquidity",
+   "meaning": "거래량과 유동성을 활용한 상대적 강도",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "상대적 강도",
+    "랭크",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.161
+    ],
+    [
+     "liq",
+     -0.085
+    ],
+    [
+     "range_pos",
+     -0.083
+    ]
+   ],
+   "reassign_from": "liq",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.161,
+   "remap_status": "unchanged"
+  },
+  "1731320a568c": {
+   "id": "1731320a568c",
+   "category": "candle_pattern",
+   "meaning": "캔들스틱의 종가와 시가 차이를 고가와 저가 범위로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들스틱",
+    "가격범위",
+    "시가",
+    "종가",
+    "고저가"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.038
+    ],
+    [
+     "price_level",
+     -0.028
+    ],
+    [
+     "liq",
+     -0.025
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "cb3bc7c2d6a8": {
+   "id": "cb3bc7c2d6a8",
+   "category": "candle_pattern",
+   "meaning": "종가와 시가 차이를 시가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들스틱",
+    "시가",
+    "종가",
+    "가격변화",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.031
+    ],
+    [
+     "rel_volume",
+     0.011
+    ],
+    [
+     "vol20",
+     -0.009
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "852453af7d7b": {
+   "id": "852453af7d7b",
+   "category": "range_position",
+   "meaning": "고가와 저가 차이를 시가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "가격범위",
+    "고저가",
+    "시가",
+    "변동성",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.035
+    ],
+    [
+     "liq",
+     0.021
+    ],
+    [
+     "price_level",
+     0.017
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "4cc614ef517d": {
+   "id": "4cc614ef517d",
+   "category": "candle_pattern",
+   "meaning": "종가와 시가 차이를 고가와 저가 범위로 나눈 값 (소수점 보정)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들스틱",
+    "가격범위",
+    "시가",
+    "종가",
+    "고저가"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.037
+    ],
+    [
+     "price_level",
+     -0.028
+    ],
+    [
+     "liq",
+     -0.025
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "d31ff73e5ae4": {
+   "id": "d31ff73e5ae4",
+   "category": "range_position",
+   "meaning": "고가와 시가 또는 종가 중 큰 값의 차이를 시가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "고가",
+    "시가",
+    "종가",
+    "가격범위",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.034
+    ],
+    [
+     "range_pos",
+     -0.032
+    ],
+    [
+     "vol20",
+     -0.019
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "6ba6ae37f1f8": {
+   "id": "6ba6ae37f1f8",
+   "category": "range_position",
+   "meaning": "고가와 시가 또는 종가 중 큰 값의 차이를 고가와 저가 범위로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "고가",
+    "저가",
+    "시가",
+    "종가",
+    "가격범위"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.033
+    ],
+    [
+     "rel_volume",
+     0.023
+    ],
+    [
+     "pv_corr",
+     -0.016
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "a699b090b0c5": {
+   "id": "a699b090b0c5",
+   "category": "range_position",
+   "meaning": "시가 또는 종가 중 작은 값과 저가 차이를 시가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "저가",
+    "시가",
+    "종가",
+    "가격범위",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.032
+    ],
+    [
+     "mom5",
+     -0.021
+    ],
+    [
+     "revers",
+     0.021
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "00594a8bab4e": {
+   "id": "00594a8bab4e",
+   "category": "range_position",
+   "meaning": "시가 또는 종가 중 작은 값과 저가 차이를 고가와 저가 범위로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "저가",
+    "시가",
+    "종가",
+    "가격범위",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.019
+    ],
+    [
+     "revers",
+     0.019
+    ],
+    [
+     "pv_corr",
+     0.014
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "f5dc3057c827": {
+   "id": "f5dc3057c827",
+   "category": "candle_pattern",
+   "meaning": "종가의 두 배에서 고가와 저가를 뺀 값을 시가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들스틱",
+    "고가",
+    "저가",
+    "종가",
+    "시가"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.042
+    ],
+    [
+     "range_pos",
+     0.018
+    ],
+    [
+     "mom5",
+     -0.012
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "5c4f2d94aee9": {
+   "id": "5c4f2d94aee9",
+   "category": "candle_pattern",
+   "meaning": "종가의 두 배에서 고가와 저가를 뺀 값을 고가와 저가 범위로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "캔들스틱",
+    "고가",
+    "저가",
+    "종가",
+    "가격범위"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.04
+    ],
+    [
+     "liq",
+     -0.026
+    ],
+    [
+     "price_level",
+     -0.023
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "fad688eea208": {
+   "id": "fad688eea208",
+   "category": "trend",
+   "meaning": "시가를 종가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "시가",
+    "종가",
+    "추세",
+    "비율",
+    "가격비교"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.031
+    ],
+    [
+     "rel_volume",
+     -0.011
+    ],
+    [
+     "vol20",
+     0.009
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "795ac473af7e": {
+   "id": "795ac473af7e",
+   "category": "trend",
+   "meaning": "고가를 종가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "고가",
+    "종가",
+    "추세",
+    "비율",
+    "가격비교"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.026
+    ],
+    [
+     "liq",
+     0.021
+    ],
+    [
+     "rel_volume",
+     0.019
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "2a1a33aef9db": {
+   "id": "2a1a33aef9db",
+   "category": "trend",
+   "meaning": "저가를 종가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "저가",
+    "종가",
+    "추세",
+    "비율",
+    "가격비교"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.041
+    ],
+    [
+     "rel_volume",
+     -0.023
+    ],
+    [
+     "mom5",
+     0.012
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "4d6410804201": {
+   "id": "4d6410804201",
+   "category": "trend",
+   "meaning": "VWAP를 종가로 나눈 값",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "VWAP",
+    "종가",
+    "추세",
+    "비율",
+    "가격비교"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     -0.042
+    ],
+    [
+     "range_pos",
+     -0.017
+    ],
+    [
+     "mom5",
+     0.012
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "4ba732b0bc6c": {
+   "id": "4ba732b0bc6c",
+   "category": "momentum",
+   "meaning": "5일 전 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "5일",
+    "종가",
+    "추세",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.994
+    ],
+    [
+     "revers",
+     0.994
+    ],
+    [
+     "range_pos",
+     -0.686
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.994,
+   "remap_status": "unchanged"
+  },
+  "e60abcc69a02": {
+   "id": "e60abcc69a02",
+   "category": "momentum",
+   "meaning": "10일 전 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "10일",
+    "종가",
+    "추세",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.788
+    ],
+    [
+     "mom5",
+     -0.69
+    ],
+    [
+     "revers",
+     0.69
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.654,
+   "remap_status": "unchanged"
+  },
+  "099f2288a198": {
+   "id": "099f2288a198",
+   "category": "momentum",
+   "meaning": "20일 전 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "20일",
+    "종가",
+    "추세",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.983
+    ],
+    [
+     "range_pos",
+     -0.736
+    ],
+    [
+     "mom5",
+     -0.438
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.983,
+   "remap_status": "unchanged"
+  },
+  "5c6274684a79": {
+   "id": "5c6274684a79",
+   "category": "momentum",
+   "meaning": "30일 전 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "30일",
+    "종가",
+    "추세",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.759
+    ],
+    [
+     "range_pos",
+     -0.59
+    ],
+    [
+     "mom5",
+     -0.376
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.759,
+   "remap_status": "unchanged"
+  },
+  "24ab62758229": {
+   "id": "24ab62758229",
+   "category": "momentum",
+   "meaning": "60일 전 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "60일",
+    "종가",
+    "추세",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.524
+    ],
+    [
+     "range_pos",
+     -0.417
+    ],
+    [
+     "mom5",
+     -0.283
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.524,
+   "remap_status": "unchanged"
+  },
+  "6cf5ea88b1ea": {
+   "id": "6cf5ea88b1ea",
+   "category": "momentum",
+   "meaning": "5일 평균 종가를 현재 종가로 나눈 값",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "모멘텀",
+    "5일",
+    "평균",
+    "종가",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.813
+    ],
+    [
+     "revers",
+     0.813
+    ],
+    [
+     "range_pos",
+     -0.623
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.813,
+   "remap_status": "unchanged"
+  },
+  "4acc8849869f": {
+   "id": "4acc8849869f",
+   "category": "trend",
+   "meaning": "10일 평균 종가 대비 현재 종가의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "10일 평균",
+    "종가 위치",
+    "추세",
+    "상대적 위치",
+    "평균 대비"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.922
+    ],
+    [
+     "revers",
+     0.922
+    ],
+    [
+     "range_pos",
+     -0.778
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.536,
+   "remap_status": "unchanged"
+  },
+  "a5f2799598fc": {
+   "id": "a5f2799598fc",
+   "category": "trend",
+   "meaning": "20일 평균 종가 대비 현재 종가의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "20일 평균",
+    "종가 위치",
+    "추세",
+    "상대적 위치",
+    "평균 대비"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.873
+    ],
+    [
+     "mom20",
+     -0.816
+    ],
+    [
+     "mom5",
+     -0.748
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.816,
+   "remap_status": "unchanged"
+  },
+  "99f82a8148c9": {
+   "id": "99f82a8148c9",
+   "category": "trend",
+   "meaning": "30일 평균 종가 대비 현재 종가의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "30일 평균",
+    "종가 위치",
+    "추세",
+    "상대적 위치",
+    "평균 대비"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.915
+    ],
+    [
+     "range_pos",
+     -0.837
+    ],
+    [
+     "mom5",
+     -0.633
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.915,
+   "remap_status": "unchanged"
+  },
+  "f1b01bc2be3f": {
+   "id": "f1b01bc2be3f",
+   "category": "trend",
+   "meaning": "60일 평균 종가 대비 현재 종가의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "60일 평균",
+    "종가 위치",
+    "추세",
+    "상대적 위치",
+    "평균 대비"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.809
+    ],
+    [
+     "range_pos",
+     -0.686
+    ],
+    [
+     "mom5",
+     -0.474
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.809,
+   "remap_status": "unchanged"
+  },
+  "6c5b23eed970": {
+   "id": "6c5b23eed970",
+   "category": "volatility",
+   "meaning": "5일 종가 변동성 대비 현재 종가의 상대적 크기",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "5일 변동성",
+    "종가 변동",
+    "변동성",
+    "상대적 크기",
+    "표준편차"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     0.625
+    ],
+    [
+     "size",
+     0.12
+    ],
+    [
+     "range_pos",
+     -0.078
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.625,
+   "remap_status": "unchanged"
+  },
+  "9f97baac9118": {
+   "id": "9f97baac9118",
+   "category": "volatility",
+   "meaning": "10일 종가 변동성 대비 현재 종가의 상대적 크기",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "10일 변동성",
+    "종가 변동",
+    "변동성",
+    "상대적 크기",
+    "표준편차"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     0.644
+    ],
+    [
+     "range_pos",
+     -0.125
+    ],
+    [
+     "mom20",
+     -0.116
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.644,
+   "remap_status": "unchanged"
+  },
+  "fd64dd9f6753": {
+   "id": "fd64dd9f6753",
+   "category": "volatility",
+   "meaning": "20일 종가 변동성 대비 현재 종가의 상대적 크기",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "20일 변동성",
+    "종가 변동",
+    "변동성",
+    "상대적 크기",
+    "표준편차"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     0.629
+    ],
+    [
+     "mom20",
+     -0.222
+    ],
+    [
+     "range_pos",
+     -0.19
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.629,
+   "remap_status": "unchanged"
+  },
+  "1210b41a3a6d": {
+   "id": "1210b41a3a6d",
+   "category": "volatility",
+   "meaning": "30일 종가 변동성 대비 현재 종가의 상대적 크기",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "30일 변동성",
+    "종가 변동",
+    "변동성",
+    "상대적 크기",
+    "표준편차"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     0.606
+    ],
+    [
+     "mom20",
+     -0.263
+    ],
+    [
+     "range_pos",
+     -0.198
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.606,
+   "remap_status": "unchanged"
+  },
+  "96149f3910af": {
+   "id": "96149f3910af",
+   "category": "volatility",
+   "meaning": "60일 종가 변동성 대비 현재 종가의 상대적 크기",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "60일 변동성",
+    "종가 변동",
+    "변동성",
+    "상대적 크기",
+    "표준편차"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     0.593
+    ],
+    [
+     "mom20",
+     -0.219
+    ],
+    [
+     "range_pos",
+     -0.151
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.593,
+   "remap_status": "unchanged"
+  },
+  "b592e015dc0c": {
+   "id": "b592e015dc0c",
+   "category": "trend",
+   "meaning": "5일 종가 추세 기울기 대비 현재 종가의 상대적 크기",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "5일 추세",
+    "기울기",
+    "종가 추세",
+    "추세 강도",
+    "상대적 크기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.874
+    ],
+    [
+     "revers",
+     -0.874
+    ],
+    [
+     "range_pos",
+     0.626
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.874,
+   "remap_status": "unchanged"
+  },
+  "24f7aeb0747e": {
+   "id": "24f7aeb0747e",
+   "category": "trend",
+   "meaning": "10일 종가 추세 기울기 대비 현재 종가의 상대적 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "10일 추세",
+    "기울기",
+    "종가 추세",
+    "추세 강도",
+    "상대적 크기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.728
+    ],
+    [
+     "revers",
+     -0.728
+    ],
+    [
+     "range_pos",
+     0.728
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.581,
+   "remap_status": "unchanged"
+  },
+  "27304fec1dbb": {
+   "id": "27304fec1dbb",
+   "category": "trend",
+   "meaning": "20일 종가 추세 기울기 대비 현재 종가의 상대적 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "20일 추세",
+    "기울기",
+    "종가 추세",
+    "추세 강도",
+    "상대적 크기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.881
+    ],
+    [
+     "range_pos",
+     0.677
+    ],
+    [
+     "mom5",
+     0.278
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.881,
+   "remap_status": "unchanged"
+  },
+  "d61e561ad78d": {
+   "id": "d61e561ad78d",
+   "category": "trend",
+   "meaning": "30일 종가 추세 기울기 대비 현재 종가의 상대적 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "30일 추세",
+    "기울기",
+    "종가 추세",
+    "추세 강도",
+    "상대적 크기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.813
+    ],
+    [
+     "range_pos",
+     0.481
+    ],
+    [
+     "mom5",
+     0.122
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.813,
+   "remap_status": "unchanged"
+  },
+  "553d67a80409": {
+   "id": "553d67a80409",
+   "category": "trend",
+   "meaning": "60일 종가 추세 기울기 대비 현재 종가의 상대적 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "60일 추세",
+    "기울기",
+    "종가 추세",
+    "추세 강도",
+    "상대적 크기"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.436
+    ],
+    [
+     "range_pos",
+     0.243
+    ],
+    [
+     "liq",
+     0.11
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.436,
+   "remap_status": "unchanged"
+  },
+  "54bc98123686": {
+   "id": "54bc98123686",
+   "category": "trend",
+   "meaning": "5일 종가 회귀선의 설명력 (R제곱값)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "5일 회귀",
+    "R제곱",
+    "설명력",
+    "추세 적합도",
+    "회귀선"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.041
+    ],
+    [
+     "mom20",
+     -0.031
+    ],
+    [
+     "size",
+     -0.028
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "232a10a3e51e": {
+   "id": "232a10a3e51e",
+   "category": "trend",
+   "meaning": "10일 종가 회귀선의 설명력 (R제곱값)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "10일 회귀",
+    "R제곱",
+    "설명력",
+    "추세 적합도",
+    "회귀선"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.054
+    ],
+    [
+     "mom20",
+     -0.045
+    ],
+    [
+     "size",
+     -0.043
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "878d05b8cb14": {
+   "id": "878d05b8cb14",
+   "category": "trend",
+   "meaning": "20일 종가 회귀선의 설명력 (R제곱값)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "20일 회귀",
+    "R제곱",
+    "설명력",
+    "추세 적합도",
+    "회귀선"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.101
+    ],
+    [
+     "size",
+     -0.06
+    ],
+    [
+     "range_pos",
+     0.026
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "dd64dc570acf": {
+   "id": "dd64dc570acf",
+   "category": "trend",
+   "meaning": "30일 종가 회귀선의 설명력 (R제곱값)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "30일 회귀",
+    "R제곱",
+    "설명력",
+    "추세 적합도",
+    "회귀선"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.113
+    ],
+    [
+     "size",
+     -0.083
+    ],
+    [
+     "price_level",
+     -0.042
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "92331de0119b": {
+   "id": "92331de0119b",
+   "category": "trend",
+   "meaning": "60일 종가 회귀선의 설명력 (R제곱값)",
+   "direction_ref": null,
+   "direction_sign": null,
+   "keywords": [
+    "60일 회귀",
+    "R제곱",
+    "설명력",
+    "추세 적합도",
+    "회귀선"
+   ],
+   "fingerprint_top": [
+    [
+     "size",
+     0.126
+    ],
+    [
+     "mom20",
+     0.123
+    ],
+    [
+     "liq",
+     0.122
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "72e9efe1bf69": {
+   "id": "72e9efe1bf69",
+   "category": "trend",
+   "meaning": "5일 종가 회귀 잔차 대비 현재 종가의 상대적 크기",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "5일 잔차",
+    "회귀 잔차",
+    "추세 잔차",
+    "잔차 크기",
+    "회귀"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.085
+    ],
+    [
+     "mom5",
+     -0.007
+    ],
+    [
+     "revers",
+     0.007
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "unchanged"
+  },
+  "7e3f45b6dcab": {
+   "id": "7e3f45b6dcab",
+   "category": "range_position",
+   "meaning": "최근 10일간 종가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "위치",
+    "상대적",
+    "10일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.443
+    ],
+    [
+     "revers",
+     -0.443
+    ],
+    [
+     "range_pos",
+     0.181
+    ]
+   ],
+   "reassign_from": "mom10",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.443,
+   "remap_status": "unchanged"
+  },
+  "27bc0e2828ee": {
+   "id": "27bc0e2828ee",
+   "category": "range_position",
+   "meaning": "최근 20일간 종가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "위치",
+    "상대적",
+    "20일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.777
+    ],
+    [
+     "revers",
+     -0.777
+    ],
+    [
+     "range_pos",
+     0.374
+    ]
+   ],
+   "reassign_from": "mom20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.777,
+   "remap_status": "unchanged"
+  },
+  "7f73c2b000a7": {
+   "id": "7f73c2b000a7",
+   "category": "range_position",
+   "meaning": "최근 30일간 종가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "위치",
+    "상대적",
+    "30일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.778
+    ],
+    [
+     "revers",
+     -0.778
+    ],
+    [
+     "range_pos",
+     0.578
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.778,
+   "remap_status": "unchanged"
+  },
+  "0d6726bccb63": {
+   "id": "0d6726bccb63",
+   "category": "range_position",
+   "meaning": "최근 60일간 종가의 상대적 위치를 측정",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "레인지",
+    "위치",
+    "상대적",
+    "60일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.736
+    ],
+    [
+     "mom5",
+     0.66
+    ],
+    [
+     "revers",
+     -0.66
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.736,
+   "remap_status": "unchanged"
+  },
+  "b31d8da531bf": {
+   "id": "b31d8da531bf",
+   "category": "range_position",
+   "meaning": "최근 5일간 고가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "고가",
+    "위치",
+    "5일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.698
+    ],
+    [
+     "revers",
+     0.698
+    ],
+    [
+     "range_pos",
+     -0.552
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.698,
+   "remap_status": "unchanged"
+  },
+  "d908e4df3dac": {
+   "id": "d908e4df3dac",
+   "category": "range_position",
+   "meaning": "최근 10일간 고가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "레인지",
+    "고가",
+    "위치",
+    "10일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.738
+    ],
+    [
+     "revers",
+     0.738
+    ],
+    [
+     "range_pos",
+     -0.684
+    ]
+   ],
+   "reassign_from": "mom10",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.738,
+   "remap_status": "unchanged"
+  },
+  "9534ab75241e": {
+   "id": "9534ab75241e",
+   "category": "range_position",
+   "meaning": "최근 20일간 고가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "고가",
+    "위치",
+    "20일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.746
+    ],
+    [
+     "mom20",
+     -0.725
+    ],
+    [
+     "mom5",
+     -0.578
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.725,
+   "remap_status": "unchanged"
+  },
+  "77e1766ebc59": {
+   "id": "77e1766ebc59",
+   "category": "range_position",
+   "meaning": "최근 30일간 고가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "고가",
+    "위치",
+    "30일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.753
+    ],
+    [
+     "range_pos",
+     -0.676
+    ],
+    [
+     "mom5",
+     -0.477
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.753,
+   "remap_status": "unchanged"
+  },
+  "de12041d36f6": {
+   "id": "de12041d36f6",
+   "category": "range_position",
+   "meaning": "최근 60일간 고가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "고가",
+    "위치",
+    "60일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.626
+    ],
+    [
+     "range_pos",
+     -0.52
+    ],
+    [
+     "vol20",
+     0.379
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.626,
+   "remap_status": "unchanged"
+  },
+  "2c6f08610f60": {
+   "id": "2c6f08610f60",
+   "category": "range_position",
+   "meaning": "최근 5일간 저가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "저가",
+    "위치",
+    "5일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.722
+    ],
+    [
+     "revers",
+     0.722
+    ],
+    [
+     "range_pos",
+     -0.54
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.722,
+   "remap_status": "unchanged"
+  },
+  "43a297e7a15b": {
+   "id": "43a297e7a15b",
+   "category": "range_position",
+   "meaning": "최근 10일간 저가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "레인지",
+    "저가",
+    "위치",
+    "10일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.777
+    ],
+    [
+     "revers",
+     0.777
+    ],
+    [
+     "range_pos",
+     -0.69
+    ]
+   ],
+   "reassign_from": "mom10",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.777,
+   "remap_status": "unchanged"
+  },
+  "eb29a09f1efe": {
+   "id": "eb29a09f1efe",
+   "category": "range_position",
+   "meaning": "최근 20일간 저가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "저가",
+    "위치",
+    "20일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.797
+    ],
+    [
+     "mom20",
+     -0.732
+    ],
+    [
+     "mom5",
+     -0.619
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.732,
+   "remap_status": "unchanged"
+  },
+  "81e44406eb4e": {
+   "id": "81e44406eb4e",
+   "category": "range_position",
+   "meaning": "최근 30일간 저가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "저가",
+    "위치",
+    "30일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.778
+    ],
+    [
+     "range_pos",
+     -0.743
+    ],
+    [
+     "mom5",
+     -0.545
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.778,
+   "remap_status": "unchanged"
+  },
+  "760a39d6d9a2": {
+   "id": "760a39d6d9a2",
+   "category": "range_position",
+   "meaning": "최근 60일간 저가 대비 종가의 상대적 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "저가",
+    "위치",
+    "60일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.692
+    ],
+    [
+     "range_pos",
+     -0.626
+    ],
+    [
+     "mom5",
+     -0.434
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.692,
+   "remap_status": "unchanged"
+  },
+  "b68f0fb1a735": {
+   "id": "b68f0fb1a735",
+   "category": "range_position",
+   "meaning": "최근 5일간 종가의 상위 20% 위치를 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "상위",
+    "20%",
+    "5일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.746
+    ],
+    [
+     "revers",
+     0.746
+    ],
+    [
+     "range_pos",
+     -0.579
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.746,
+   "remap_status": "unchanged"
+  },
+  "8c9dcc645b0f": {
+   "id": "8c9dcc645b0f",
+   "category": "range_position",
+   "meaning": "최근 10일간 종가의 상위 20% 위치를 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "레인지",
+    "상위",
+    "20%",
+    "10일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.843
+    ],
+    [
+     "revers",
+     0.843
+    ],
+    [
+     "range_pos",
+     -0.721
+    ]
+   ],
+   "reassign_from": "mom10",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.843,
+   "remap_status": "unchanged"
+  },
+  "7ba4bbcb1e0f": {
+   "id": "7ba4bbcb1e0f",
+   "category": "range_position",
+   "meaning": "최근 20일간 종가의 상위 20% 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "상위",
+    "20%",
+    "20일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.801
+    ],
+    [
+     "mom20",
+     -0.757
+    ],
+    [
+     "mom5",
+     -0.684
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.757,
+   "remap_status": "unchanged"
+  },
+  "5ef26c5821ba": {
+   "id": "5ef26c5821ba",
+   "category": "range_position",
+   "meaning": "최근 30일간 종가의 상위 20% 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "상위",
+    "20%",
+    "30일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.844
+    ],
+    [
+     "range_pos",
+     -0.761
+    ],
+    [
+     "mom5",
+     -0.578
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.844,
+   "remap_status": "unchanged"
+  },
+  "abe73d9085ee": {
+   "id": "abe73d9085ee",
+   "category": "range_position",
+   "meaning": "최근 60일간 종가의 상위 20% 위치를 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "상위",
+    "20%",
+    "60일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.725
+    ],
+    [
+     "range_pos",
+     -0.607
+    ],
+    [
+     "mom5",
+     -0.418
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.725,
+   "remap_status": "unchanged"
+  },
+  "54e0e9ba2419": {
+   "id": "54e0e9ba2419",
+   "category": "range_position",
+   "meaning": "최근 5일간 종가의 하위 20% 위치를 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "-",
+   "keywords": [
+    "레인지",
+    "하위",
+    "20%",
+    "5일",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.761
+    ],
+    [
+     "revers",
+     0.761
+    ],
+    [
+     "range_pos",
+     -0.576
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.761,
+   "remap_status": "unchanged"
+  },
+  "dd9de955985d": {
+   "id": "dd9de955985d",
+   "category": "range_position",
+   "meaning": "최근 10일간 하위 20% 가격 대비 현재 종가 위치",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "퀀타일",
+    "가격위치",
+    "범위",
+    "하위20%",
+    "10일"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.875
+    ],
+    [
+     "revers",
+     0.875
+    ],
+    [
+     "range_pos",
+     -0.729
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.875,
+   "remap_status": "unchanged"
+  },
+  "16d6a1390493": {
+   "id": "16d6a1390493",
+   "category": "range_position",
+   "meaning": "최근 20일간 하위 20% 가격 대비 현재 종가 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "퀀타일",
+    "가격위치",
+    "범위",
+    "하위20%",
+    "20일"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.839
+    ],
+    [
+     "mom20",
+     -0.772
+    ],
+    [
+     "mom5",
+     -0.725
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.839,
+   "remap_status": "unchanged"
+  },
+  "247a1e9e48a6": {
+   "id": "247a1e9e48a6",
+   "category": "range_position",
+   "meaning": "최근 30일간 하위 20% 가격 대비 현재 종가 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "퀀타일",
+    "가격위치",
+    "범위",
+    "하위20%",
+    "30일"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.877
+    ],
+    [
+     "range_pos",
+     -0.82
+    ],
+    [
+     "mom5",
+     -0.642
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.877,
+   "remap_status": "unchanged"
+  },
+  "cba81beb91fb": {
+   "id": "cba81beb91fb",
+   "category": "range_position",
+   "meaning": "최근 60일간 하위 20% 가격 대비 현재 종가 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "퀀타일",
+    "가격위치",
+    "범위",
+    "하위20%",
+    "60일"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.804
+    ],
+    [
+     "range_pos",
+     -0.7
+    ],
+    [
+     "mom5",
+     -0.493
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.804,
+   "remap_status": "unchanged"
+  },
+  "6ab6e0503bd0": {
+   "id": "6ab6e0503bd0",
+   "category": "trend",
+   "meaning": "최근 5일간 종가의 상대적 순위",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "순위",
+    "트렌드",
+    "5일",
+    "상대적",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.642
+    ],
+    [
+     "revers",
+     -0.642
+    ],
+    [
+     "range_pos",
+     0.607
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.642,
+   "remap_status": "unchanged"
+  },
+  "45b6887ff62c": {
+   "id": "45b6887ff62c",
+   "category": "trend",
+   "meaning": "최근 10일간 종가의 상대적 순위",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "순위",
+    "트렌드",
+    "10일",
+    "상대적",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.81
+    ],
+    [
+     "mom5",
+     0.781
+    ],
+    [
+     "revers",
+     -0.781
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.451,
+   "remap_status": "unchanged"
+  },
+  "9bdbf49a1154": {
+   "id": "9bdbf49a1154",
+   "category": "trend",
+   "meaning": "최근 20일간 종가의 상대적 순위",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "순위",
+    "트렌드",
+    "20일",
+    "상대적",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.961
+    ],
+    [
+     "mom5",
+     0.696
+    ],
+    [
+     "revers",
+     -0.696
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.684,
+   "remap_status": "unchanged"
+  },
+  "7be7389228ff": {
+   "id": "7be7389228ff",
+   "category": "trend",
+   "meaning": "최근 30일간 종가의 상대적 순위",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "순위",
+    "트렌드",
+    "30일",
+    "상대적",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.943
+    ],
+    [
+     "mom20",
+     0.784
+    ],
+    [
+     "mom5",
+     0.618
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.784,
+   "remap_status": "unchanged"
+  },
+  "cfc297a883c0": {
+   "id": "cfc297a883c0",
+   "category": "trend",
+   "meaning": "최근 60일간 종가의 상대적 순위",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "순위",
+    "트렌드",
+    "60일",
+    "상대적",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.805
+    ],
+    [
+     "mom20",
+     0.758
+    ],
+    [
+     "mom5",
+     0.487
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.758,
+   "remap_status": "unchanged"
+  },
+  "d4ee6afa0761": {
+   "id": "d4ee6afa0761",
+   "category": "range_position",
+   "meaning": "최근 5일간 고가와 저가 범위 내 종가 위치",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "범위",
+    "가격위치",
+    "5일",
+    "고가",
+    "저가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.702
+    ],
+    [
+     "revers",
+     -0.702
+    ],
+    [
+     "range_pos",
+     0.648
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.702,
+   "remap_status": "unchanged"
+  },
+  "5f016e5e4446": {
+   "id": "5f016e5e4446",
+   "category": "range_position",
+   "meaning": "최근 10일간 고가와 저가 범위 내 종가 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "범위",
+    "가격위치",
+    "10일",
+    "고가",
+    "저가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.852
+    ],
+    [
+     "mom5",
+     0.794
+    ],
+    [
+     "revers",
+     -0.794
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.852,
+   "remap_status": "unchanged"
+  },
+  "046accd11a43": {
+   "id": "046accd11a43",
+   "category": "range_position",
+   "meaning": "최근 20일간 고가와 저가 범위 내 종가 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "범위",
+    "가격위치",
+    "20일",
+    "고가",
+    "저가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     1.0
+    ],
+    [
+     "mom20",
+     0.747
+    ],
+    [
+     "mom5",
+     0.682
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 1.0,
+   "remap_status": "unchanged"
+  },
+  "d90bd87defb2": {
+   "id": "d90bd87defb2",
+   "category": "range_position",
+   "meaning": "최근 30일간 고가와 저가 범위 내 종가 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "범위",
+    "가격위치",
+    "30일",
+    "고가",
+    "저가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.926
+    ],
+    [
+     "mom20",
+     0.804
+    ],
+    [
+     "mom5",
+     0.603
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.926,
+   "remap_status": "unchanged"
+  },
+  "60aa51fbd3c4": {
+   "id": "60aa51fbd3c4",
+   "category": "range_position",
+   "meaning": "최근 60일간 고가와 저가 범위 내 종가 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "범위",
+    "가격위치",
+    "60일",
+    "고가",
+    "저가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.766
+    ],
+    [
+     "mom20",
+     0.739
+    ],
+    [
+     "mom5",
+     0.476
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.766,
+   "remap_status": "unchanged"
+  },
+  "0141790f37c1": {
+   "id": "0141790f37c1",
+   "category": "range_position",
+   "meaning": "최근 5일간 고가가 발생한 시점의 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "고가",
+    "발생시점",
+    "5일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.641
+    ],
+    [
+     "revers",
+     0.641
+    ],
+    [
+     "range_pos",
+     -0.547
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.641,
+   "remap_status": "unchanged"
+  },
+  "669358792492": {
+   "id": "669358792492",
+   "category": "range_position",
+   "meaning": "최근 10일간 고가가 발생한 시점의 비율",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "발생시점",
+    "10일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.669
+    ],
+    [
+     "mom5",
+     -0.53
+    ],
+    [
+     "revers",
+     0.53
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.669,
+   "remap_status": "unchanged"
+  },
+  "75c1fe368093": {
+   "id": "75c1fe368093",
+   "category": "range_position",
+   "meaning": "최근 20일간 고가가 발생한 시점의 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "발생시점",
+    "20일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.685
+    ],
+    [
+     "range_pos",
+     -0.648
+    ],
+    [
+     "mom5",
+     -0.281
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.685,
+   "remap_status": "unchanged"
+  },
+  "b8a9f25edde7": {
+   "id": "b8a9f25edde7",
+   "category": "range_position",
+   "meaning": "최근 30일간 고가가 발생한 시점의 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "발생시점",
+    "30일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.602
+    ],
+    [
+     "range_pos",
+     -0.462
+    ],
+    [
+     "mom5",
+     -0.197
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.602,
+   "remap_status": "unchanged"
+  },
+  "63ede13a8af2": {
+   "id": "63ede13a8af2",
+   "category": "range_position",
+   "meaning": "최근 60일간 고가가 발생한 시점의 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "고가",
+    "발생시점",
+    "60일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.349
+    ],
+    [
+     "range_pos",
+     -0.249
+    ],
+    [
+     "mom5",
+     -0.09
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.349,
+   "remap_status": "unchanged"
+  },
+  "f39e597dc231": {
+   "id": "f39e597dc231",
+   "category": "range_position",
+   "meaning": "최근 5일간 저가가 발생한 시점의 비율",
+   "direction_ref": "revers",
+   "direction_sign": "-",
+   "keywords": [
+    "저가",
+    "발생시점",
+    "5일",
+    "비율",
+    "위치"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.642
+    ],
+    [
+     "revers",
+     -0.642
+    ],
+    [
+     "range_pos",
+     0.547
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.642,
+   "remap_status": "unchanged"
+  },
+  "9ccf26331687": {
+   "id": "9ccf26331687",
+   "category": "range_position",
+   "meaning": "최근 10일 중 최저가가 발생한 시점의 상대적 위치",
+   "direction_ref": "range_pos",
+   "direction_sign": "+",
+   "keywords": [
+    "최저가",
+    "위치",
+    "10일",
+    "저점",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.671
+    ],
+    [
+     "mom5",
+     0.537
+    ],
+    [
+     "revers",
+     -0.537
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.671,
+   "remap_status": "unchanged"
+  },
+  "3e2bc02ffdc5": {
+   "id": "3e2bc02ffdc5",
+   "category": "range_position",
+   "meaning": "최근 20일 중 최저가가 발생한 시점의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "최저가",
+    "위치",
+    "20일",
+    "저점",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.687
+    ],
+    [
+     "range_pos",
+     0.63
+    ],
+    [
+     "mom5",
+     0.247
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.687,
+   "remap_status": "unchanged"
+  },
+  "455f434f70ac": {
+   "id": "455f434f70ac",
+   "category": "range_position",
+   "meaning": "최근 30일 중 최저가가 발생한 시점의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "최저가",
+    "위치",
+    "30일",
+    "저점",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.594
+    ],
+    [
+     "range_pos",
+     0.433
+    ],
+    [
+     "mom5",
+     0.148
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.594,
+   "remap_status": "unchanged"
+  },
+  "ae7d7200320a": {
+   "id": "ae7d7200320a",
+   "category": "range_position",
+   "meaning": "최근 60일 중 최저가가 발생한 시점의 상대적 위치",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "최저가",
+    "위치",
+    "60일",
+    "저점",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.365
+    ],
+    [
+     "range_pos",
+     0.266
+    ],
+    [
+     "mom5",
+     0.104
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.365,
+   "remap_status": "unchanged"
+  },
+  "20fd40bde683": {
+   "id": "20fd40bde683",
+   "category": "volatility",
+   "meaning": "최근 5일 동안 고점과 저점 간의 변동성 크기",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "고점",
+    "저점",
+    "5일",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.723
+    ],
+    [
+     "revers",
+     0.723
+    ],
+    [
+     "range_pos",
+     -0.617
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.723,
+   "remap_status": "unchanged"
+  },
+  "daa2fb019adc": {
+   "id": "daa2fb019adc",
+   "category": "volatility",
+   "meaning": "최근 10일 동안 고점과 저점 간의 변동성 크기",
+   "direction_ref": "range_pos",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "고점",
+    "저점",
+    "10일",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.758
+    ],
+    [
+     "mom5",
+     -0.602
+    ],
+    [
+     "revers",
+     0.602
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.758,
+   "remap_status": "unchanged"
+  },
+  "df8ee721194f": {
+   "id": "df8ee721194f",
+   "category": "volatility",
+   "meaning": "최근 20일 동안 고점과 저점 간의 변동성 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "고점",
+    "저점",
+    "20일",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.773
+    ],
+    [
+     "range_pos",
+     -0.728
+    ],
+    [
+     "mom5",
+     -0.3
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.773,
+   "remap_status": "unchanged"
+  },
+  "9cdf55f3df7f": {
+   "id": "9cdf55f3df7f",
+   "category": "volatility",
+   "meaning": "최근 30일 동안 고점과 저점 간의 변동성 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "고점",
+    "저점",
+    "30일",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.684
+    ],
+    [
+     "range_pos",
+     -0.517
+    ],
+    [
+     "mom5",
+     -0.199
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.684,
+   "remap_status": "unchanged"
+  },
+  "972db88dc6c8": {
+   "id": "972db88dc6c8",
+   "category": "volatility",
+   "meaning": "최근 60일 동안 고점과 저점 간의 변동성 크기",
+   "direction_ref": "mom20",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "고점",
+    "저점",
+    "60일",
+    "시계열"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.416
+    ],
+    [
+     "range_pos",
+     -0.299
+    ],
+    [
+     "mom5",
+     -0.113
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.416,
+   "remap_status": "unchanged"
+  },
+  "afddcaa6ce46": {
+   "id": "afddcaa6ce46",
+   "category": "correlation",
+   "meaning": "최근 5일 동안 종가와 거래량 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가",
+    "거래량",
+    "5일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.23
+    ],
+    [
+     "range_pos",
+     -0.031
+    ],
+    [
+     "vol20",
+     -0.022
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.23,
+   "remap_status": "unchanged"
+  },
+  "b581a2c4f322": {
+   "id": "b581a2c4f322",
+   "category": "correlation",
+   "meaning": "최근 10일 동안 종가와 거래량 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가",
+    "거래량",
+    "10일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.502
+    ],
+    [
+     "range_pos",
+     -0.06
+    ],
+    [
+     "mom5",
+     -0.049
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.502,
+   "remap_status": "unchanged"
+  },
+  "731f2a402682": {
+   "id": "731f2a402682",
+   "category": "correlation",
+   "meaning": "최근 20일 동안 종가와 거래량 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가",
+    "거래량",
+    "20일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.961
+    ],
+    [
+     "range_pos",
+     -0.081
+    ],
+    [
+     "mom5",
+     -0.07
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.961,
+   "remap_status": "unchanged"
+  },
+  "d01f3d0b966d": {
+   "id": "d01f3d0b966d",
+   "category": "correlation",
+   "meaning": "최근 30일 동안 종가와 거래량 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가",
+    "거래량",
+    "30일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.684
+    ],
+    [
+     "mom20",
+     -0.099
+    ],
+    [
+     "price_level",
+     -0.079
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.684,
+   "remap_status": "unchanged"
+  },
+  "405738c6547f": {
+   "id": "405738c6547f",
+   "category": "correlation",
+   "meaning": "최근 60일 동안 종가와 거래량 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가",
+    "거래량",
+    "60일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.34
+    ],
+    [
+     "price_level",
+     -0.078
+    ],
+    [
+     "vol20",
+     0.07
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.34,
+   "remap_status": "unchanged"
+  },
+  "938c637b30c0": {
+   "id": "938c637b30c0",
+   "category": "correlation",
+   "meaning": "최근 5일 동안 종가 변화율과 거래량 변화율 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가 변화율",
+    "거래량 변화율",
+    "5일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.177
+    ],
+    [
+     "range_pos",
+     -0.06
+    ],
+    [
+     "mom5",
+     -0.047
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.177,
+   "remap_status": "unchanged"
+  },
+  "5bf1103e539a": {
+   "id": "5bf1103e539a",
+   "category": "correlation",
+   "meaning": "최근 10일 동안 종가 변화율과 거래량 변화율 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가 변화율",
+    "거래량 변화율",
+    "10일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.297
+    ],
+    [
+     "range_pos",
+     -0.082
+    ],
+    [
+     "vol20",
+     -0.062
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.297,
+   "remap_status": "unchanged"
+  },
+  "3aef481e7848": {
+   "id": "3aef481e7848",
+   "category": "correlation",
+   "meaning": "최근 20일 동안 종가 변화율과 거래량 변화율 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가 변화율",
+    "거래량 변화율",
+    "20일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.422
+    ],
+    [
+     "range_pos",
+     -0.103
+    ],
+    [
+     "mom20",
+     -0.083
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.422,
+   "remap_status": "unchanged"
+  },
+  "8858471c2737": {
+   "id": "8858471c2737",
+   "category": "correlation",
+   "meaning": "최근 30일 동안 종가 변화율과 거래량 변화율 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가 변화율",
+    "거래량 변화율",
+    "30일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.337
+    ],
+    [
+     "vol20",
+     -0.092
+    ],
+    [
+     "mom20",
+     -0.084
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.337,
+   "remap_status": "unchanged"
+  },
+  "9e0007f7e12f": {
+   "id": "9e0007f7e12f",
+   "category": "correlation",
+   "meaning": "최근 60일 동안 종가 변화율과 거래량 변화율 로그값 간의 상관관계",
+   "direction_ref": "pv_corr",
+   "direction_sign": "+",
+   "keywords": [
+    "상관관계",
+    "종가 변화율",
+    "거래량 변화율",
+    "60일",
+    "로그"
+   ],
+   "fingerprint_top": [
+    [
+     "pv_corr",
+     0.26
+    ],
+    [
+     "vol20",
+     -0.092
+    ],
+    [
+     "price_level",
+     0.047
+    ]
+   ],
+   "reassign_from": null,
+   "label_status": "reassigned",
+   "fingerprint_corr": 0.26,
+   "remap_status": "unchanged"
+  },
+  "c8c895ced6fa": {
+   "id": "c8c895ced6fa",
+   "category": "momentum",
+   "meaning": "최근 5일 동안 종가가 전일 대비 상승한 비율",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "상승",
+    "종가",
+    "5일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.756
+    ],
+    [
+     "revers",
+     -0.756
+    ],
+    [
+     "range_pos",
+     0.579
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.756,
+   "remap_status": "unchanged"
+  },
+  "cf198008cfc7": {
+   "id": "cf198008cfc7",
+   "category": "momentum",
+   "meaning": "최근 10일간 종가 상승 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승비율",
+    "모멘텀",
+    "10일",
+    "종가",
+    "상승"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.661
+    ],
+    [
+     "mom5",
+     0.526
+    ],
+    [
+     "revers",
+     -0.526
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.476,
+   "remap_status": "unchanged"
+  },
+  "ee963b30b30f": {
+   "id": "ee963b30b30f",
+   "category": "momentum",
+   "meaning": "최근 20일간 종가 상승 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승비율",
+    "모멘텀",
+    "20일",
+    "종가",
+    "상승"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.725
+    ],
+    [
+     "range_pos",
+     0.6
+    ],
+    [
+     "mom5",
+     0.328
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.725,
+   "remap_status": "unchanged"
+  },
+  "82e0043fb943": {
+   "id": "82e0043fb943",
+   "category": "momentum",
+   "meaning": "최근 30일간 종가 상승 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승비율",
+    "모멘텀",
+    "30일",
+    "종가",
+    "상승"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.555
+    ],
+    [
+     "range_pos",
+     0.461
+    ],
+    [
+     "mom5",
+     0.271
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.555,
+   "remap_status": "unchanged"
+  },
+  "88a565d81c0f": {
+   "id": "88a565d81c0f",
+   "category": "momentum",
+   "meaning": "최근 60일간 종가 상승 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승비율",
+    "모멘텀",
+    "60일",
+    "종가",
+    "상승"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.432
+    ],
+    [
+     "range_pos",
+     0.293
+    ],
+    [
+     "mom5",
+     0.197
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.432,
+   "remap_status": "unchanged"
+  },
+  "761dfd4d641f": {
+   "id": "761dfd4d641f",
+   "category": "reversal",
+   "meaning": "최근 5일간 종가 하락 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비율",
+    "리버설",
+    "5일",
+    "종가",
+    "하락"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.756
+    ],
+    [
+     "revers",
+     0.756
+    ],
+    [
+     "range_pos",
+     -0.58
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.756,
+   "remap_status": "unchanged"
+  },
+  "88ddbf3026c3": {
+   "id": "88ddbf3026c3",
+   "category": "reversal",
+   "meaning": "최근 10일간 종가 하락 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비율",
+    "리버설",
+    "10일",
+    "종가",
+    "하락"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.669
+    ],
+    [
+     "mom5",
+     -0.534
+    ],
+    [
+     "revers",
+     0.534
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.534,
+   "remap_status": "unchanged"
+  },
+  "b8cd63516ab7": {
+   "id": "b8cd63516ab7",
+   "category": "reversal",
+   "meaning": "최근 20일간 종가 하락 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비율",
+    "리버설",
+    "20일",
+    "종가",
+    "하락"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.725
+    ],
+    [
+     "range_pos",
+     -0.625
+    ],
+    [
+     "mom5",
+     -0.346
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.346,
+   "remap_status": "unchanged"
+  },
+  "acd5c9662592": {
+   "id": "acd5c9662592",
+   "category": "reversal",
+   "meaning": "최근 30일간 종가 하락 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비율",
+    "리버설",
+    "30일",
+    "종가",
+    "하락"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.56
+    ],
+    [
+     "range_pos",
+     -0.5
+    ],
+    [
+     "mom5",
+     -0.283
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.283,
+   "remap_status": "unchanged"
+  },
+  "ee8df38e989c": {
+   "id": "ee8df38e989c",
+   "category": "reversal",
+   "meaning": "최근 60일간 종가 하락 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비율",
+    "리버설",
+    "60일",
+    "종가",
+    "하락"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.393
+    ],
+    [
+     "range_pos",
+     -0.357
+    ],
+    [
+     "mom5",
+     -0.203
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.203,
+   "remap_status": "unchanged"
+  },
+  "05e7662981ba": {
+   "id": "05e7662981ba",
+   "category": "momentum",
+   "meaning": "최근 5일간 종가 상승 비율과 하락 비율의 차이",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "상승-하락",
+    "모멘텀",
+    "5일",
+    "차이",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.756
+    ],
+    [
+     "revers",
+     -0.756
+    ],
+    [
+     "range_pos",
+     0.58
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.756,
+   "remap_status": "unchanged"
+  },
+  "2f5a3d6912fc": {
+   "id": "2f5a3d6912fc",
+   "category": "momentum",
+   "meaning": "최근 10일간 종가 상승 비율과 하락 비율의 차이",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승-하락",
+    "모멘텀",
+    "10일",
+    "차이",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.669
+    ],
+    [
+     "mom5",
+     0.532
+    ],
+    [
+     "revers",
+     -0.532
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.476,
+   "remap_status": "unchanged"
+  },
+  "e653809da0a9": {
+   "id": "e653809da0a9",
+   "category": "momentum",
+   "meaning": "최근 20일간 종가 상승 비율과 하락 비율의 차이",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승-하락",
+    "모멘텀",
+    "20일",
+    "차이",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.725
+    ],
+    [
+     "range_pos",
+     0.627
+    ],
+    [
+     "mom5",
+     0.344
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.725,
+   "remap_status": "unchanged"
+  },
+  "6fd6cc74739a": {
+   "id": "6fd6cc74739a",
+   "category": "momentum",
+   "meaning": "최근 30일간 종가 상승 비율과 하락 비율의 차이",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승-하락",
+    "모멘텀",
+    "30일",
+    "차이",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.561
+    ],
+    [
+     "range_pos",
+     0.511
+    ],
+    [
+     "mom5",
+     0.293
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.561,
+   "remap_status": "unchanged"
+  },
+  "409eb339c01c": {
+   "id": "409eb339c01c",
+   "category": "momentum",
+   "meaning": "최근 60일간 종가 상승 비율과 하락 비율의 차이",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승-하락",
+    "모멘텀",
+    "60일",
+    "차이",
+    "종가"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.459
+    ],
+    [
+     "range_pos",
+     0.412
+    ],
+    [
+     "mom5",
+     0.25
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.459,
+   "remap_status": "unchanged"
+  },
+  "5207b767adf3": {
+   "id": "5207b767adf3",
+   "category": "momentum",
+   "meaning": "최근 5일간 상승폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "상승폭",
+    "모멘텀",
+    "5일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.884
+    ],
+    [
+     "revers",
+     -0.884
+    ],
+    [
+     "range_pos",
+     0.722
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.884,
+   "remap_status": "unchanged"
+  },
+  "b3f2cde2d8bc": {
+   "id": "b3f2cde2d8bc",
+   "category": "momentum",
+   "meaning": "최근 10일간 상승폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승폭",
+    "모멘텀",
+    "10일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.849
+    ],
+    [
+     "mom5",
+     0.638
+    ],
+    [
+     "revers",
+     -0.638
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.604,
+   "remap_status": "unchanged"
+  },
+  "532bf10e5723": {
+   "id": "532bf10e5723",
+   "category": "momentum",
+   "meaning": "최근 20일간 상승폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승폭",
+    "모멘텀",
+    "20일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.916
+    ],
+    [
+     "range_pos",
+     0.799
+    ],
+    [
+     "mom5",
+     0.42
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.916,
+   "remap_status": "unchanged"
+  },
+  "9cae1366092f": {
+   "id": "9cae1366092f",
+   "category": "momentum",
+   "meaning": "최근 30일간 상승폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승폭",
+    "모멘텀",
+    "30일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.722
+    ],
+    [
+     "range_pos",
+     0.654
+    ],
+    [
+     "mom5",
+     0.359
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.722,
+   "remap_status": "unchanged"
+  },
+  "0f3ede298934": {
+   "id": "0f3ede298934",
+   "category": "momentum",
+   "meaning": "최근 60일간 상승폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "상승폭",
+    "모멘텀",
+    "60일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.555
+    ],
+    [
+     "range_pos",
+     0.5
+    ],
+    [
+     "mom5",
+     0.293
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.555,
+   "remap_status": "unchanged"
+  },
+  "1929fc1861f1": {
+   "id": "1929fc1861f1",
+   "category": "reversal",
+   "meaning": "최근 5일간 하락폭이 전체 변동폭에서 차지하는 비율",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락폭",
+    "리버설",
+    "5일",
+    "비율",
+    "변동폭"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     -0.884
+    ],
+    [
+     "revers",
+     0.884
+    ],
+    [
+     "range_pos",
+     -0.722
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.884,
+   "remap_status": "unchanged"
+  },
+  "a7b668434be8": {
+   "id": "a7b668434be8",
+   "category": "reversal",
+   "meaning": "최근 10일간 하락 비중을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비중",
+    "reversal",
+    "10일",
+    "추세반전",
+    "하락압력"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     -0.849
+    ],
+    [
+     "mom5",
+     -0.638
+    ],
+    [
+     "revers",
+     0.638
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.638,
+   "remap_status": "unchanged"
+  },
+  "45e3a7bb4834": {
+   "id": "45e3a7bb4834",
+   "category": "reversal",
+   "meaning": "최근 20일간 하락 비중을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비중",
+    "reversal",
+    "20일",
+    "추세반전",
+    "하락압력"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.916
+    ],
+    [
+     "range_pos",
+     -0.799
+    ],
+    [
+     "mom5",
+     -0.42
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.42,
+   "remap_status": "unchanged"
+  },
+  "33561e3bf466": {
+   "id": "33561e3bf466",
+   "category": "reversal",
+   "meaning": "최근 30일간 하락 비중을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비중",
+    "reversal",
+    "30일",
+    "추세반전",
+    "하락압력"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.722
+    ],
+    [
+     "range_pos",
+     -0.654
+    ],
+    [
+     "mom5",
+     -0.359
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.359,
+   "remap_status": "unchanged"
+  },
+  "654ddbbd9b5c": {
+   "id": "654ddbbd9b5c",
+   "category": "reversal",
+   "meaning": "최근 60일간 하락 비중을 측정",
+   "direction_ref": "revers",
+   "direction_sign": "+",
+   "keywords": [
+    "하락비중",
+    "reversal",
+    "60일",
+    "추세반전",
+    "하락압력"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     -0.555
+    ],
+    [
+     "range_pos",
+     -0.5
+    ],
+    [
+     "mom5",
+     -0.293
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.293,
+   "remap_status": "unchanged"
+  },
+  "3a71af3730f1": {
+   "id": "3a71af3730f1",
+   "category": "momentum",
+   "meaning": "최근 5일간 상승과 하락의 균형을 측정",
+   "direction_ref": "mom5",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "momentum",
+    "5일",
+    "상승하락균형",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom5",
+     0.884
+    ],
+    [
+     "revers",
+     -0.884
+    ],
+    [
+     "range_pos",
+     0.722
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.884,
+   "remap_status": "unchanged"
+  },
+  "80928eb39eb7": {
+   "id": "80928eb39eb7",
+   "category": "momentum",
+   "meaning": "최근 10일간 상승과 하락의 균형을 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "momentum",
+    "10일",
+    "상승하락균형",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "range_pos",
+     0.849
+    ],
+    [
+     "mom5",
+     0.638
+    ],
+    [
+     "revers",
+     -0.638
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.604,
+   "remap_status": "unchanged"
+  },
+  "a9715518b701": {
+   "id": "a9715518b701",
+   "category": "momentum",
+   "meaning": "최근 20일간 상승과 하락의 균형을 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "momentum",
+    "20일",
+    "상승하락균형",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.916
+    ],
+    [
+     "range_pos",
+     0.799
+    ],
+    [
+     "mom5",
+     0.42
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.916,
+   "remap_status": "unchanged"
+  },
+  "d35271b9b9f5": {
+   "id": "d35271b9b9f5",
+   "category": "momentum",
+   "meaning": "최근 30일간 상승과 하락의 균형을 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "momentum",
+    "30일",
+    "상승하락균형",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.722
+    ],
+    [
+     "range_pos",
+     0.654
+    ],
+    [
+     "mom5",
+     0.359
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.722,
+   "remap_status": "unchanged"
+  },
+  "43d647382d22": {
+   "id": "43d647382d22",
+   "category": "momentum",
+   "meaning": "최근 60일간 상승과 하락의 균형을 측정",
+   "direction_ref": "mom20",
+   "direction_sign": "+",
+   "keywords": [
+    "모멘텀",
+    "momentum",
+    "60일",
+    "상승하락균형",
+    "추세"
+   ],
+   "fingerprint_top": [
+    [
+     "mom20",
+     0.555
+    ],
+    [
+     "range_pos",
+     0.5
+    ],
+    [
+     "mom5",
+     0.293
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.555,
+   "remap_status": "unchanged"
+  },
+  "e396de02574c": {
+   "id": "e396de02574c",
+   "category": "volume_liquidity",
+   "meaning": "최근 5일간 평균 거래량 대비 현재 거래량 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "5일",
+    "volume",
+    "liquidity"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.713
+    ],
+    [
+     "liq",
+     -0.23
+    ],
+    [
+     "range_pos",
+     -0.01
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.23,
+   "remap_status": "unchanged"
+  },
+  "bbf67216d04a": {
+   "id": "bbf67216d04a",
+   "category": "volume_liquidity",
+   "meaning": "최근 10일간 평균 거래량 대비 현재 거래량 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "10일",
+    "volume",
+    "liquidity"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.758
+    ],
+    [
+     "liq",
+     -0.238
+    ],
+    [
+     "vol20",
+     0.017
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.238,
+   "remap_status": "unchanged"
+  },
+  "f8732e1d6086": {
+   "id": "f8732e1d6086",
+   "category": "volume_liquidity",
+   "meaning": "최근 20일간 평균 거래량 대비 현재 거래량 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "20일",
+    "volume",
+    "liquidity"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.788
+    ],
+    [
+     "liq",
+     -0.243
+    ],
+    [
+     "pv_corr",
+     -0.029
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.243,
+   "remap_status": "unchanged"
+  },
+  "46a28946f057": {
+   "id": "46a28946f057",
+   "category": "volume_liquidity",
+   "meaning": "최근 30일간 평균 거래량 대비 현재 거래량 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "30일",
+    "volume",
+    "liquidity"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.786
+    ],
+    [
+     "liq",
+     -0.251
+    ],
+    [
+     "pv_corr",
+     -0.027
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.251,
+   "remap_status": "unchanged"
+  },
+  "f331d2584141": {
+   "id": "f331d2584141",
+   "category": "volume_liquidity",
+   "meaning": "최근 60일간 평균 거래량 대비 현재 거래량 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "60일",
+    "volume",
+    "liquidity"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.788
+    ],
+    [
+     "liq",
+     -0.255
+    ],
+    [
+     "pv_corr",
+     -0.022
+    ]
+   ],
+   "flip_from": "+",
+   "label_status": "verified_flipped",
+   "fingerprint_corr": -0.255,
+   "remap_status": "unchanged"
+  },
+  "35cafdf960aa": {
+   "id": "35cafdf960aa",
+   "category": "volatility",
+   "meaning": "최근 5일간 거래량의 변동성 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "5일",
+    "거래량",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.491
+    ],
+    [
+     "liq",
+     -0.164
+    ],
+    [
+     "range_pos",
+     -0.039
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.491,
+   "remap_status": "unchanged"
+  },
+  "e422342c62f3": {
+   "id": "e422342c62f3",
+   "category": "volatility",
+   "meaning": "최근 10일간 거래량의 변동성 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "10일",
+    "거래량",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.591
+    ],
+    [
+     "liq",
+     -0.177
+    ],
+    [
+     "range_pos",
+     -0.058
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.591,
+   "remap_status": "unchanged"
+  },
+  "e8ba95da2bf6": {
+   "id": "e8ba95da2bf6",
+   "category": "volatility",
+   "meaning": "최근 20일간 거래량의 변동성 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "20일",
+    "거래량",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.685
+    ],
+    [
+     "liq",
+     -0.193
+    ],
+    [
+     "range_pos",
+     -0.038
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.685,
+   "remap_status": "unchanged"
+  },
+  "7368306c1804": {
+   "id": "7368306c1804",
+   "category": "volatility",
+   "meaning": "최근 30일간 거래량의 변동성 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "30일",
+    "거래량",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.711
+    ],
+    [
+     "liq",
+     -0.212
+    ],
+    [
+     "size",
+     -0.028
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.711,
+   "remap_status": "unchanged"
+  },
+  "23b7f7956e76": {
+   "id": "23b7f7956e76",
+   "category": "volatility",
+   "meaning": "최근 60일간 거래량의 변동성 측정",
+   "direction_ref": "rel_volume",
+   "direction_sign": "-",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "60일",
+    "거래량",
+    "유동성"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.749
+    ],
+    [
+     "liq",
+     -0.221
+    ],
+    [
+     "size",
+     -0.03
+    ]
+   ],
+   "reassign_from": "vol20",
+   "label_status": "reassigned",
+   "fingerprint_corr": -0.749,
+   "remap_status": "unchanged"
+  },
+  "75ed2afe829b": {
+   "id": "75ed2afe829b",
+   "category": "volatility",
+   "meaning": "최근 5일간 거래량과 수익률 변동성의 비율",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "volatility",
+    "5일",
+    "거래량",
+    "수익률"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.069
+    ],
+    [
+     "mom20",
+     0.056
+    ],
+    [
+     "size",
+     -0.03
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "51b3f22cc1c6"
+  },
+  "96ec468716d2": {
+   "id": "96ec468716d2",
+   "category": "volatility",
+   "meaning": "10일간 거래량 가중 변동성의 표준편차 대비 평균 비율",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "거래량",
+    "표준편차",
+    "평균",
+    "10일"
+   ],
+   "fingerprint_top": [
+    [
+     "vol20",
+     -0.072
+    ],
+    [
+     "mom20",
+     0.063
+    ],
+    [
+     "size",
+     -0.04
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "2a19c410e4a6"
+  },
+  "555512c341e6": {
+   "id": "555512c341e6",
+   "category": "volatility",
+   "meaning": "20일간 거래량 가중 변동성의 표준편차 대비 평균 비율",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "거래량",
+    "표준편차",
+    "평균",
+    "20일"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.052
+    ],
+    [
+     "size",
+     -0.049
+    ],
+    [
+     "vol20",
+     -0.043
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "7dde621ebf8b"
+  },
+  "e6073c034021": {
+   "id": "e6073c034021",
+   "category": "volatility",
+   "meaning": "30일간 거래량 가중 변동성의 표준편차 대비 평균 비율",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "거래량",
+    "표준편차",
+    "평균",
+    "30일"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.07
+    ],
+    [
+     "mom20",
+     0.069
+    ],
+    [
+     "size",
+     -0.059
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "d582c5bcbb6e"
+  },
+  "602a7c40b4c1": {
+   "id": "602a7c40b4c1",
+   "category": "volatility",
+   "meaning": "60일간 거래량 가중 변동성의 표준편차 대비 평균 비율",
+   "direction_ref": "vol20",
+   "direction_sign": "+",
+   "keywords": [
+    "변동성",
+    "거래량",
+    "표준편차",
+    "평균",
+    "60일"
+   ],
+   "fingerprint_top": [
+    [
+     "price_level",
+     -0.084
+    ],
+    [
+     "mom20",
+     0.033
+    ],
+    [
+     "pv_corr",
+     0.031
+    ]
+   ],
+   "label_status": "unverifiable",
+   "fingerprint_corr": null,
+   "remap_status": "remapped",
+   "id_prev": "e0197c92d7aa"
+  },
+  "4f653ecde7ee": {
+   "id": "4f653ecde7ee",
+   "category": "volume_liquidity",
+   "meaning": "5일간 거래량 증가 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "5일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.648
+    ],
+    [
+     "liq",
+     0.193
+    ],
+    [
+     "mom5",
+     -0.025
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.193,
+   "remap_status": "unchanged"
+  },
+  "2b78ae301ffa": {
+   "id": "2b78ae301ffa",
+   "category": "volume_liquidity",
+   "meaning": "10일간 거래량 증가 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "10일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.676
+    ],
+    [
+     "liq",
+     0.195
+    ],
+    [
+     "mom5",
+     -0.022
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.195,
+   "remap_status": "unchanged"
+  },
+  "ebe73fc4ee90": {
+   "id": "ebe73fc4ee90",
+   "category": "volume_liquidity",
+   "meaning": "20일간 거래량 증가 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "20일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.669
+    ],
+    [
+     "liq",
+     0.205
+    ],
+    [
+     "mom5",
+     -0.042
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.205,
+   "remap_status": "unchanged"
+  },
+  "e14c35589c25": {
+   "id": "e14c35589c25",
+   "category": "volume_liquidity",
+   "meaning": "30일간 거래량 증가 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "30일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.673
+    ],
+    [
+     "liq",
+     0.233
+    ],
+    [
+     "price_level",
+     0.059
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.233,
+   "remap_status": "unchanged"
+  },
+  "b83763fefb05": {
+   "id": "b83763fefb05",
+   "category": "volume_liquidity",
+   "meaning": "60일간 거래량 증가 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "60일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.632
+    ],
+    [
+     "liq",
+     0.275
+    ],
+    [
+     "price_level",
+     0.13
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.275,
+   "remap_status": "unchanged"
+  },
+  "755adb85a0d6": {
+   "id": "755adb85a0d6",
+   "category": "volume_liquidity",
+   "meaning": "5일간 거래량 감소 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "감소",
+    "5일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.648
+    ],
+    [
+     "liq",
+     -0.193
+    ],
+    [
+     "mom5",
+     0.025
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.193,
+   "remap_status": "unchanged"
+  },
+  "3b885f617db6": {
+   "id": "3b885f617db6",
+   "category": "volume_liquidity",
+   "meaning": "10일간 거래량 감소 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "감소",
+    "10일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.676
+    ],
+    [
+     "liq",
+     -0.195
+    ],
+    [
+     "mom5",
+     0.022
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.195,
+   "remap_status": "unchanged"
+  },
+  "a56447cb96cf": {
+   "id": "a56447cb96cf",
+   "category": "volume_liquidity",
+   "meaning": "20일간 거래량 감소 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "감소",
+    "20일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.669
+    ],
+    [
+     "liq",
+     -0.205
+    ],
+    [
+     "mom5",
+     0.042
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.205,
+   "remap_status": "unchanged"
+  },
+  "589c4663b081": {
+   "id": "589c4663b081",
+   "category": "volume_liquidity",
+   "meaning": "30일간 거래량 감소 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "감소",
+    "30일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.673
+    ],
+    [
+     "liq",
+     -0.233
+    ],
+    [
+     "price_level",
+     -0.059
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.233,
+   "remap_status": "unchanged"
+  },
+  "657cbbc31300": {
+   "id": "657cbbc31300",
+   "category": "volume_liquidity",
+   "meaning": "60일간 거래량 감소 비율의 합계 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "-",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "감소",
+    "60일",
+    "비율"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     -0.632
+    ],
+    [
+     "liq",
+     -0.275
+    ],
+    [
+     "price_level",
+     -0.13
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": -0.275,
+   "remap_status": "unchanged"
+  },
+  "d8c9760d68e1": {
+   "id": "d8c9760d68e1",
+   "category": "volume_liquidity",
+   "meaning": "5일간 거래량 증가와 감소 비율의 차이 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "감소",
+    "5일"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.648
+    ],
+    [
+     "liq",
+     0.193
+    ],
+    [
+     "mom5",
+     -0.025
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.193,
+   "remap_status": "unchanged"
+  },
+  "3e7f8b48d091": {
+   "id": "3e7f8b48d091",
+   "category": "volume_liquidity",
+   "meaning": "10일간 거래량 증가와 감소 비율의 차이 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "감소",
+    "10일"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.676
+    ],
+    [
+     "liq",
+     0.195
+    ],
+    [
+     "mom5",
+     -0.022
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.195,
+   "remap_status": "unchanged"
+  },
+  "4d1d8055d2b5": {
+   "id": "4d1d8055d2b5",
+   "category": "volume_liquidity",
+   "meaning": "20일간 거래량 증가와 감소 비율의 차이 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "감소",
+    "20일"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.669
+    ],
+    [
+     "liq",
+     0.205
+    ],
+    [
+     "mom5",
+     -0.042
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.205,
+   "remap_status": "unchanged"
+  },
+  "4412f0f74fd0": {
+   "id": "4412f0f74fd0",
+   "category": "volume_liquidity",
+   "meaning": "30일간 거래량 증가와 감소 비율의 차이 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "감소",
+    "30일"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.673
+    ],
+    [
+     "liq",
+     0.233
+    ],
+    [
+     "price_level",
+     0.059
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.233,
+   "remap_status": "unchanged"
+  },
+  "1ca99b87fa8c": {
+   "id": "1ca99b87fa8c",
+   "category": "volume_liquidity",
+   "meaning": "60일간 거래량 증가와 감소 비율의 차이 대비 총 변동 비율",
+   "direction_ref": "liq",
+   "direction_sign": "+",
+   "keywords": [
+    "거래량",
+    "유동성",
+    "증가",
+    "감소",
+    "60일"
+   ],
+   "fingerprint_top": [
+    [
+     "rel_volume",
+     0.632
+    ],
+    [
+     "liq",
+     0.275
+    ],
+    [
+     "price_level",
+     0.13
+    ]
+   ],
+   "label_status": "verified",
+   "fingerprint_corr": 0.275,
+   "remap_status": "unchanged"
+  }
+ }
+}

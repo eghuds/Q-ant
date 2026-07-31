@@ -1,0 +1,483 @@
+{
+ "schema_doc": "\nStrategySpec v0 (JSON):\n{\n \"name\": str,\n \"universe\":  {\"type\":\"all\"|\"top_n_by\"|\"explicit_list\",\n               \"by\": <필드, top_n_by 일 때>, \"n\": <정수>},\n \"features\":  [ {\"name\": str, \"ir\": <팩터 IR>} , ... ],   // 1개 이상\n \"signal\":    {\"combine\": \"single\"|\"model\"|\"weighted_sum\",\n               \"of\": [<feature name>...],\n               \"model\": {\"kind\": str, \"params\": {...}} | null},\n \"selection\": {\"type\":\"top_bottom_n\"|\"top_n\"|\"threshold\"|\"all\",\n               \"n\": <정수> | null, \"threshold\": <수> | null},\n \"portfolio\": {\"type\":\"equal_weight\"|\"rank_weight\"|\"signal_weight\"},\n \"execution\": {\"rebalance\":\"daily\"|\"weekly\"|\"monthly\"},\n \"evidence\":  {\"슬롯이름\": \"corpus\"|\"gold\"|\"user\"|\"assumed\", ...}\n}\n",
+ "golds": [
+  {
+   "name": "jpx_2nd_extracted",
+   "universe": {
+    "type": "all",
+    "_note": "대회가 2000종목 고정 — 코드에 유니버스 로직 없음"
+   },
+   "features": [
+    {
+     "name": "ret_20",
+     "ir": {
+      "kind": "op",
+      "op": "div",
+      "axis": null,
+      "args": [
+       {
+        "kind": "field",
+        "name": "close"
+       },
+       {
+        "kind": "op",
+        "op": "ts_delay",
+        "axis": "TS",
+        "args": [
+         {
+          "kind": "field",
+          "name": "close"
+         }
+        ],
+        "params": {
+         "window": 20
+        }
+       }
+      ],
+      "params": {}
+     }
+    },
+    {
+     "name": "vol_20",
+     "ir": {
+      "kind": "op",
+      "op": "ts_std",
+      "axis": "TS",
+      "args": [
+       {
+        "kind": "op",
+        "op": "div",
+        "axis": null,
+        "args": [
+         {
+          "kind": "op",
+          "op": "ts_delta",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           }
+          ],
+          "params": {
+           "window": 1
+          }
+         },
+         {
+          "kind": "op",
+          "op": "ts_delay",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           }
+          ],
+          "params": {
+           "window": 1
+          }
+         }
+        ],
+        "params": {}
+       }
+      ],
+      "params": {
+       "window": 20
+      }
+     }
+    },
+    {
+     "name": "ma_gap_20",
+     "ir": {
+      "kind": "op",
+      "op": "div",
+      "axis": null,
+      "args": [
+       {
+        "kind": "field",
+        "name": "close"
+       },
+       {
+        "kind": "op",
+        "op": "ts_mean",
+        "axis": "TS",
+        "args": [
+         {
+          "kind": "field",
+          "name": "close"
+         }
+        ],
+        "params": {
+         "window": 20
+        }
+       }
+      ],
+      "params": {}
+     }
+    }
+   ],
+   "signal": {
+    "combine": "model",
+    "of": [
+     "ret_20",
+     "vol_20",
+     "ma_gap_20"
+    ],
+    "model": {
+     "kind": "lgb.train",
+     "params": {
+      "objective": "regression",
+      "num_boost_round": 3000
+     }
+    }
+   },
+   "selection": {
+    "type": "top_bottom_n",
+    "n": 200,
+    "threshold": null
+   },
+   "portfolio": {
+    "type": "rank_weight"
+   },
+   "execution": {
+    "rebalance": "daily"
+   },
+   "evidence": {
+    "universe": "corpus",
+    "features": "corpus",
+    "signal": "corpus",
+    "selection": "corpus",
+    "portfolio": "corpus",
+    "execution": "corpus"
+   }
+  },
+  {
+   "name": "regime_momentum_or_lowvol",
+   "universe": {
+    "type": "top_n_by",
+    "by": "cap",
+    "n": 500
+   },
+   "features": [
+    {
+     "name": "mom_20",
+     "ir": {
+      "kind": "op",
+      "op": "cs_rank",
+      "axis": "CS",
+      "args": [
+       {
+        "kind": "op",
+        "op": "div",
+        "axis": null,
+        "args": [
+         {
+          "kind": "field",
+          "name": "close"
+         },
+         {
+          "kind": "op",
+          "op": "ts_delay",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           }
+          ],
+          "params": {
+           "window": 20
+          }
+         }
+        ],
+        "params": {}
+       }
+      ],
+      "params": {}
+     }
+    },
+    {
+     "name": "lowvol",
+     "ir": {
+      "kind": "op",
+      "op": "sub",
+      "axis": null,
+      "args": [
+       {
+        "kind": "const",
+        "value": 1
+       },
+       {
+        "kind": "op",
+        "op": "cs_rank",
+        "axis": "CS",
+        "args": [
+         {
+          "kind": "op",
+          "op": "ts_std",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "op",
+            "op": "div",
+            "axis": null,
+            "args": [
+             {
+              "kind": "op",
+              "op": "ts_delta",
+              "axis": "TS",
+              "args": [
+               {
+                "kind": "field",
+                "name": "close"
+               }
+              ],
+              "params": {
+               "window": 1
+              }
+             },
+             {
+              "kind": "op",
+              "op": "ts_delay",
+              "axis": "TS",
+              "args": [
+               {
+                "kind": "field",
+                "name": "close"
+               }
+              ],
+              "params": {
+               "window": 1
+              }
+             }
+            ],
+            "params": {}
+           }
+          ],
+          "params": {
+           "window": 60
+          }
+         }
+        ],
+        "params": {}
+       }
+      ],
+      "params": {}
+     }
+    },
+    {
+     "name": "regime_up",
+     "ir": {
+      "kind": "op",
+      "op": "gt",
+      "axis": null,
+      "args": [
+       {
+        "kind": "op",
+        "op": "ts_mean",
+        "axis": "TS",
+        "args": [
+         {
+          "kind": "field",
+          "name": "close"
+         }
+        ],
+        "params": {
+         "window": 20
+        }
+       },
+       {
+        "kind": "op",
+        "op": "ts_mean",
+        "axis": "TS",
+        "args": [
+         {
+          "kind": "field",
+          "name": "close"
+         }
+        ],
+        "params": {
+         "window": 60
+        }
+       }
+      ],
+      "params": {}
+     }
+    },
+    {
+     "name": "sig",
+     "ir": {
+      "kind": "op",
+      "op": "where",
+      "axis": null,
+      "args": [
+       {
+        "kind": "op",
+        "op": "gt",
+        "axis": null,
+        "args": [
+         {
+          "kind": "op",
+          "op": "ts_mean",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           }
+          ],
+          "params": {
+           "window": 20
+          }
+         },
+         {
+          "kind": "op",
+          "op": "ts_mean",
+          "axis": "TS",
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           }
+          ],
+          "params": {
+           "window": 60
+          }
+         }
+        ],
+        "params": {}
+       },
+       {
+        "kind": "op",
+        "op": "cs_rank",
+        "axis": "CS",
+        "args": [
+         {
+          "kind": "op",
+          "op": "div",
+          "axis": null,
+          "args": [
+           {
+            "kind": "field",
+            "name": "close"
+           },
+           {
+            "kind": "op",
+            "op": "ts_delay",
+            "axis": "TS",
+            "args": [
+             {
+              "kind": "field",
+              "name": "close"
+             }
+            ],
+            "params": {
+             "window": 20
+            }
+           }
+          ],
+          "params": {}
+         }
+        ],
+        "params": {}
+       },
+       {
+        "kind": "op",
+        "op": "sub",
+        "axis": null,
+        "args": [
+         {
+          "kind": "const",
+          "value": 1
+         },
+         {
+          "kind": "op",
+          "op": "cs_rank",
+          "axis": "CS",
+          "args": [
+           {
+            "kind": "op",
+            "op": "ts_std",
+            "axis": "TS",
+            "args": [
+             {
+              "kind": "op",
+              "op": "div",
+              "axis": null,
+              "args": [
+               {
+                "kind": "op",
+                "op": "ts_delta",
+                "axis": "TS",
+                "args": [
+                 {
+                  "kind": "field",
+                  "name": "close"
+                 }
+                ],
+                "params": {
+                 "window": 1
+                }
+               },
+               {
+                "kind": "op",
+                "op": "ts_delay",
+                "axis": "TS",
+                "args": [
+                 {
+                  "kind": "field",
+                  "name": "close"
+                 }
+                ],
+                "params": {
+                 "window": 1
+                }
+               }
+              ],
+              "params": {}
+             }
+            ],
+            "params": {
+             "window": 60
+            }
+           }
+          ],
+          "params": {}
+         }
+        ],
+        "params": {}
+       }
+      ],
+      "params": {}
+     }
+    }
+   ],
+   "signal": {
+    "combine": "single",
+    "of": [
+     "sig"
+    ],
+    "model": null
+   },
+   "selection": {
+    "type": "top_n",
+    "n": 50,
+    "threshold": null
+   },
+   "portfolio": {
+    "type": "equal_weight"
+   },
+   "execution": {
+    "rebalance": "weekly"
+   },
+   "evidence": {
+    "universe": "gold",
+    "features": "gold",
+    "signal": "gold",
+    "selection": "gold",
+    "portfolio": "gold",
+    "execution": "gold"
+   }
+  }
+ ]
+}
